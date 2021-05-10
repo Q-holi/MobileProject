@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameplayingActivity2">
+
+
+    <ImageView
+        android:id="@+id/dice1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/diceRolling"
+        app:layout_constraintEnd_toStartOf="@+id/dice2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dice_num1" />
+
+    <ImageView
+        android:id="@+id/dice2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="21dp"
+        app:layout_constraintBottom_toTopOf="@+id/diceRolling"
+        app:layout_constraintEnd_toStartOf="@+id/dice3"
+        app:layout_constraintStart_toEndOf="@+id/dice1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dice_num1" />
+
+    <ImageView
+        android:id="@+id/dice3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dice2"
+        app:layout_constraintEnd_toStartOf="@+id/dice4"
+        app:layout_constraintStart_toEndOf="@+id/dice2"
+        app:layout_constraintTop_toTopOf="@+id/dice2"
+        app:srcCompat="@drawable/dice_num1" />
+
+    <ImageView
+        android:id="@+id/dice4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dice3"
+        app:layout_constraintEnd_toStartOf="@+id/dice5"
+        app:layout_constraintStart_toEndOf="@+id/dice3"
+        app:layout_constraintTop_toTopOf="@+id/dice3"
+        app:srcCompat="@drawable/dice_num1" />
+
+    <ImageView
+        android:id="@+id/dice5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="86dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dice4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dice4"
+        app:layout_constraintTop_toTopOf="@+id/dice4"
+        app:srcCompat="@drawable/dice_num1" />
+
+    <Button
+        android:id="@+id/diceRolling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="567dp"
+        android:onClick="Rolldice"
+        android:text="주사위 굴리기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/dice2"
+        app:layout_constraintStart_toStartOf="@+id/dice2"
+        app:layout_constraintTop_toBottomOf="@+id/dice2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -61,5 +61,6 @@
         android:layout_marginTop="456dp"
         android:background="@drawable/background"
         android:text="Game Start"
+        android:onClick="onButton_Gamestart_Clicked"
         android:textColor="@color/black"/>
 </RelativeLayout>

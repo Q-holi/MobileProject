@@ -2,11 +2,13 @@ package com.inhatc.achtdice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Display;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -16,8 +18,9 @@ import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     MultiWaveHeader waveHeader,waveFooter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +45,10 @@ public class MainActivity extends AppCompatActivity {
         waveFooter.setWaveHeight(30);
         waveFooter.setStartColor(Color.BLACK);
         waveFooter.setCloseColor(Color.WHITE);
+    }
+
+    public void onButton_Gamestart_Clicked(View view){
+        Intent intent = new Intent(this, GameplayingActivity2.class);
+        startActivity(intent);
     }
 }
