@@ -1,470 +1,426 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".GameplayingActivity2">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
+        <ImageView
+            android:id="@+id/dice5"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="344dp"
+            android:layout_marginTop="580dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dice_num1" />
+
+        <ImageView
+            android:id="@+id/dice2"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="580dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dice_num1" />
+
+        <ImageView
+            android:id="@+id/dice3"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="180dp"
+            android:layout_marginTop="580dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dice_num1" />
+
+        <ImageView
+            android:id="@+id/dice4"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="580dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dice_num1" />
+
+        <ImageView
+            android:id="@+id/dice1"
+            android:layout_width="50dp"
+            android:layout_height="44dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="580dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/dice_num1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Aces"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="205dp"
+        android:text="Aces"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Deuces"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
+        android:layout_below="@+id/Aces"
+        android:layout_alignLeft="@+id/Aces"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="Deuces"
         android:textAllCaps="false"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/Threes"
-        app:layout_constraintEnd_toStartOf="@+id/Deuces_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Aces" />
+        android:textSize="12sp" />
 
-    <Button
-        android:id="@+id/fourofaKind"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/FourOfaKind"
+        android:layout_toLeftOf="@+id/FourOfaKind_btn"
+        android:layout_alignBottom="@+id/FourOfaKind_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="4 of a Kind"
         android:textAllCaps="false"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/S.Straight"
-        app:layout_constraintEnd_toStartOf="@+id/fourofaKind_btn"
-        app:layout_constraintStart_toEndOf="@+id/Deuces_btn"
-        app:layout_constraintTop_toBottomOf="@+id/Choice" />
+        android:textSize="12sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Deuces_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/Threes"
-        app:layout_constraintEnd_toStartOf="@+id/fourofaKind"
-        app:layout_constraintStart_toEndOf="@+id/Deuces"
-        app:layout_constraintTop_toTopOf="@+id/Aces" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_toRightOf="@+id/Deuces"
+        android:layout_alignBottom="@+id/Deuces"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Fours_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="19dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Fours"
-        app:layout_constraintEnd_toStartOf="@+id/L.Straight"
-        app:layout_constraintStart_toEndOf="@+id/Fours" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_toRightOf="@+id/Fours"
+        android:layout_alignBottom="@+id/Fours"
+        android:onClick="onButtonClick"
+        android:text="0"  />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/L.Straight"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_toLeftOf="@+id/LargeStraight_btn"
+        android:layout_alignBottom="@+id/LargeStraight_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="L.Straight"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/FullHouse"
-        app:layout_constraintEnd_toStartOf="@+id/L.Staight_btn"
-        app:layout_constraintStart_toEndOf="@+id/Fours_btn"
-        app:layout_constraintTop_toBottomOf="@+id/S.Straight" />
+        android:textSize="12sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Fours"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
+        android:layout_below="@+id/Threes"
+        android:layout_alignLeft="@+id/Threes"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="Fours"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/Fives"
-        app:layout_constraintEnd_toStartOf="@+id/Fours_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Threes" />
+        android:textSize="12sp" />
 
-    <Button
-        android:id="@+id/Fives_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="19dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Fives"
-        app:layout_constraintEnd_toStartOf="@+id/FullHouse"
-        app:layout_constraintStart_toEndOf="@+id/Fives" />
-
-    <Button
-        android:id="@+id/Fives"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:text="Fives"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/Sixes"
-        app:layout_constraintEnd_toStartOf="@+id/Fives_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Fours" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/FullHouse"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="Full House"
+        android:layout_toLeftOf="@+id/FullHouse_btn"
+        android:layout_alignBottom="@+id/FullHouse_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:text="FullHouse"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/Yacht"
-        app:layout_constraintEnd_toStartOf="@+id/FullHouse_btn"
-        app:layout_constraintStart_toEndOf="@+id/Fives_btn"
-        app:layout_constraintTop_toBottomOf="@+id/L.Straight" />
+        android:textSize="12sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/FullHouse_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/Yacht_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/FullHouse"
-        app:layout_constraintTop_toTopOf="@+id/L.Straight" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/FourOfaKind_btn"
+        android:layout_alignRight="@+id/FourOfaKind_btn"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Sixes_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="19dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Sixes"
-        app:layout_constraintEnd_toStartOf="@+id/Yacht"
-        app:layout_constraintStart_toEndOf="@+id/Sixes" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/Sixes"
+        android:layout_toRightOf="@+id/Sixes"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
-        android:id="@+id/Yacht_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="27dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Yacht"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Yacht" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Threes_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_toRightOf="@+id/Threes"
+        android:layout_alignBottom="@+id/Threes"
+        android:onClick="onButtonClick"
+        android:text="0"  />
 
-    <Button
-        android:id="@+id/Yacht"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:text="Yacht"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/player1_Banner5"
-        app:layout_constraintEnd_toStartOf="@+id/Yacht_btn"
-        app:layout_constraintStart_toEndOf="@+id/Sixes_btn"
-        app:layout_constraintTop_toBottomOf="@+id/FullHouse" />
-
-    <Button
-        android:id="@+id/Sixes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="16dp"
-        android:text="Sixes"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toTopOf="@+id/player1_Banner7"
-        app:layout_constraintEnd_toStartOf="@+id/Sixes_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Fives" />
-
-    <Button
-        android:id="@+id/L.Staight_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/FullHouse_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/L.Straight"
-        app:layout_constraintTop_toTopOf="@+id/S.Straight" />
-
-    <Button
-        android:id="@+id/S.Straight"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="S.Straight"
-        android:textAllCaps="false"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/L.Straight"
-        app:layout_constraintEnd_toStartOf="@+id/S.Staight_btn"
-        app:layout_constraintStart_toEndOf="@+id/Threes_btn"
-        app:layout_constraintTop_toBottomOf="@+id/fourofaKind" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Threes"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
+        android:layout_below="@+id/Deuces"
+        android:layout_alignLeft="@+id/Deuces"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="Threes"
         android:textAllCaps="false"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Fives"
+        android:layout_below="@+id/Fours"
+        android:layout_alignLeft="@+id/Fours"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:text="Fives"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Fives_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/Fives"
+        android:layout_toRightOf="@+id/Fives"
+        android:onClick="onButtonClick"
+        android:text="0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Sixes"
+        android:layout_below="@+id/Fives"
+        android:layout_alignLeft="@+id/Fives"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:textAllCaps="false"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/Fours"
-        app:layout_constraintEnd_toStartOf="@+id/Threes_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Deuces" />
+        android:text="Sixes"/>
 
-    <Button
-        android:id="@+id/S.Staight_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/L.Staight_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/S.Straight"
-        app:layout_constraintTop_toTopOf="@+id/fourofaKind" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Yacht_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/LargeStraight_btn"
+        android:layout_alignRight="@+id/LargeStraight_btn"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
-        android:id="@+id/Threes_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/Fours"
-        app:layout_constraintEnd_toStartOf="@+id/S.Straight"
-        app:layout_constraintStart_toEndOf="@+id/Threes"
-        app:layout_constraintTop_toTopOf="@+id/Deuces" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Yacht"
+        android:layout_toLeftOf="@+id/Yacht_btn"
+        android:layout_alignBottom="@+id/Yacht_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:text="Yacht"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
+s
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/LargeStraight_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/SmallStraight_btn"
+        android:layout_alignRight="@+id/SmallStraight_btn"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
-        android:id="@+id/fourofaKind_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="55dp"
-        android:text="0"
-        app:layout_constraintBottom_toBottomOf="@+id/S.Staight_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/fourofaKind"
-        app:layout_constraintTop_toTopOf="@+id/Choice_btn" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/S.Straight"
+        android:layout_toLeftOf="@+id/SmallStraight_btn"
+        android:layout_alignBottom="@+id/SmallStraight_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:text="S.Straight"
+        android:textAllCaps="false"
+        android:textSize="12sp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SmallStraight_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/FullHouse_btn"
+        android:layout_alignRight="@+id/FullHouse_btn"
+        android:onClick="onButtonClick"
+        android:text="0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/FourOfaKind_btn"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/Choice_btn"
+        android:layout_alignRight="@+id/Choice_btn"
+        android:onClick="onButtonClick"
+        android:text="0"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Choice"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_toLeftOf="@+id/Choice_btn"
+        android:layout_alignBottom="@+id/Choice_btn"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
         android:text="Choice"
         android:textAllCaps="false"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/fourofaKind"
-        app:layout_constraintEnd_toStartOf="@+id/Choice_btn"
-        app:layout_constraintStart_toEndOf="@+id/Aces_btn"
-        app:layout_constraintTop_toBottomOf="@+id/dice5" />
+        android:textSize="12sp" />
 
-    <Button
-        android:id="@+id/Aces"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="15dp"
-        android:text="Aces"
-        app:layout_constraintBottom_toTopOf="@+id/Deuces"
-        app:layout_constraintEnd_toStartOf="@+id/Aces_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/diceRolling" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Aces_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="19dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Aces"
-        app:layout_constraintEnd_toStartOf="@+id/Choice"
-        app:layout_constraintStart_toEndOf="@+id/Aces" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/Aces"
+        android:layout_toRightOf="@+id/Aces"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Choice_btn"
-        android:layout_width="0dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="27dp"
-        android:text="0"
-        app:layout_constraintBaseline_toBaselineOf="@+id/Choice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Choice" />
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="205dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="onButtonClick"
+        android:text="0" />
 
-    <ImageView
-        android:id="@+id/dice4"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/dice5"
-        app:layout_constraintEnd_toStartOf="@+id/dice5"
-        app:layout_constraintTop_toTopOf="@+id/dice5"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/dice_num1" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/diceRolling"
-        android:layout_width="225dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="148dp"
         android:onClick="Rolldice"
         android:text="주사위 굴리기"
-        app:layout_constraintBottom_toTopOf="@+id/Aces"
-        app:layout_constraintEnd_toStartOf="@+id/Choice"
-        app:layout_constraintHorizontal_bias="0.475"
-        app:layout_constraintStart_toStartOf="@+id/Choice"
-        app:layout_constraintTop_toBottomOf="@+id/dice3" />
-
-    <ImageView
-        android:id="@+id/dice5"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="89dp"
-        app:layout_constraintBottom_toTopOf="@+id/Choice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/player1_Banner"
-        app:srcCompat="@drawable/dice_num1" />
-
-    <ImageView
-        android:id="@+id/dice3"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/diceRolling"
-        app:layout_constraintEnd_toStartOf="@+id/dice4"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toEndOf="@+id/dice2"
-        app:layout_constraintTop_toBottomOf="@+id/dice1"
-        app:srcCompat="@drawable/dice_num1" />
-
-    <ImageView
-        android:id="@+id/dice2"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="28dp"
-        app:layout_constraintBottom_toBottomOf="@+id/dice1"
-        app:layout_constraintStart_toEndOf="@+id/dice1"
-        app:layout_constraintTop_toTopOf="@+id/dice1"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/dice_num1" />
-
-    <ImageView
-        android:id="@+id/dice1"
-        android:layout_width="50dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/dice3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Player1_Banner"
-        app:srcCompat="@drawable/dice_num1" />
+        tools:layout_editor_absoluteY="137dp" />
+
+
 
     <TextView
-        android:id="@+id/Player1_Banner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="Player1"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/dice1"
-        app:layout_constraintEnd_toStartOf="@+id/player1_Banner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/player1_Banner2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="227dp"
-        android:layout_marginBottom="92dp"
-        android:gravity="center"
-        android:text="O"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/player1_Banner6"
-        app:layout_constraintTop_toBottomOf="@+id/player1_Banner7" />
-
-    <TextView
-        android:id="@+id/player1_Banner6"
-        android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="3dp"
-        android:gravity="center"
-        android:text="+35 Bonus"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/player1_Banner2"
-        app:layout_constraintEnd_toStartOf="@+id/player1_Banner2"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/player1_Banner5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="96dp"
-        android:gravity="center"
-        android:text="Total"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Yacht_btn"
-        app:layout_constraintStart_toStartOf="@+id/Yacht"
-        app:layout_constraintTop_toBottomOf="@+id/Yacht" />
-
-    <TextView
-        android:id="@+id/player1_Banner8"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="31dp"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/player1_Banner5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/player1_Banner4" />
-
-    <TextView
-        android:id="@+id/player1_Banner7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="9dp"
-        android:gravity="center"
-        android:text="Subtotal"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/player1_Banner2"
-        app:layout_constraintEnd_toStartOf="@+id/player1_Banner4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Sixes" />
-
-    <TextView
-        android:id="@+id/player1_Banner4"
-        android:layout_width="0dp"
-        android:layout_height="35dp"
-        android:layout_marginEnd="108dp"
-        android:gravity="center"
-        android:text="0/63"
-        android:textSize="20sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/player1_Banner7"
-        app:layout_constraintEnd_toStartOf="@+id/player1_Banner8"
-        app:layout_constraintStart_toEndOf="@+id/player1_Banner7" />
-
-    <TextView
-        android:id="@+id/player1_Banner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/player2_Banner"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="644dp"
         android:gravity="center"
         android:text="Player2"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/dice5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Player1_Banner"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="13dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/Player1_Banner"
+        android:layout_width="184dp"
+        android:layout_height="81dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="603dp"
+        android:gravity="center"
+        android:text="Player1"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="13dp" />
+
+    <TextView
+        android:id="@+id/Bonus_Banner"
+        android:layout_below="@+id/Subtotal_Banner"
+        android:layout_alignLeft="@+id/Subtotal_Banner"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="+35 Bonus"
+         />
+
+    <TextView
+        android:id="@+id/Bonus_check"
+        android:layout_width="83dp"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/Bonus_Banner"
+        android:layout_toRightOf="@+id/Bonus_Banner"
+        android:gravity="center"
+        android:text="O"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/Total_banner"
+        android:layout_toLeftOf="@+id/Total_Score"
+        android:layout_alignBottom="@+id/Total_Score"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:text="Total"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/Total_Score"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_below="@+id/Yacht_btn"
+        android:layout_alignRight="@+id/Yacht_btn"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/Subtotal_Banner"
+        android:layout_below="@+id/Sixes"
+        android:layout_alignLeft="@+id/Sixes"
+        android:layout_width="110dp"
+        android:layout_height="44dp"
+        android:textAllCaps="false"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="Subtotal" />
+
+    <TextView
+        android:id="@+id/Subtotal"
+        android:layout_width="88dp"
+        android:layout_height="44dp"
+        android:layout_alignBottom="@+id/Subtotal_Banner"
+        android:layout_toRightOf="@+id/Subtotal_Banner"
+        android:gravity="center"
+        android:text="0/63"
+        android:textSize="20dp"/>
+
+</RelativeLayout>
