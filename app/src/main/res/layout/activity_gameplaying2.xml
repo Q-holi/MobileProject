@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/Trun"
+                android:id="@+id/Turn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:width="100dp"
@@ -25,26 +25,29 @@
                 android:gravity="center"
                 android:text="0/12"
                 android:textSize="20dp" />
+
             <TextView
-                android:id="@+id/P1Trun"
+                android:id="@+id/P1Turn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/Trun"
+                android:layout_toRightOf="@+id/Turn"
                 android:width="80dp"
                 android:height="35dp"
                 android:gravity="center"
                 android:text="P1"
+                android:textColor="#000000"
                 android:textSize="20dp" />
 
             <TextView
-                android:id="@+id/P2Trun"
+                android:id="@+id/P2Turn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1Trun"
+                android:layout_toRightOf="@+id/P1Turn"
                 android:width="80dp"
                 android:height="35dp"
                 android:gravity="center"
                 android:text="P2"
+                android:textColor="#000000"
                 android:textSize="20dp" />
         </RelativeLayout>
         <!-- Aces-->

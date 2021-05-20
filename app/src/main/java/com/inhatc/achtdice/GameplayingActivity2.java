@@ -2,6 +2,7 @@ package com.inhatc.achtdice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -65,6 +66,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DiceRoll = (Button) findViewById(R.id.DiceRolling);
+        //P1버튼 객체생성
         setContentView(R.layout.activity_gameplaying2);
         P1Aces = (Button) findViewById(R.id.P1AcesBtn);
         P1Deuces = (Button) findViewById(R.id.P1DeucesBtn);
@@ -78,8 +81,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
         P1SmallStraight = (Button) findViewById(R.id.P1SmallStraightBtn);
         P1LargeStraight = (Button) findViewById(R.id.P1LargeStraightBtn);
         P1Yacht = (Button) findViewById(R.id.P1YachtBtn);
-        DiceRoll = (Button) findViewById(R.id.DiceRolling);
 
+        //P1버튼 전부 비활성화
         P1Aces.setEnabled(false);
         P1Deuces.setEnabled(false);
         P1Trees.setEnabled(false);
@@ -92,7 +95,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         P1SmallStraight.setEnabled(false);
         P1LargeStraight.setEnabled(false);
         P1Yacht.setEnabled(false);
-
+        //P2버튼 객체생성
         P2Aces = (Button) findViewById(R.id.P2AcesBtn);
         P2Deuces = (Button) findViewById(R.id.P2DeucesBtn);
         P2Trees = (Button) findViewById(R.id.P2ThreesBtn);
@@ -107,18 +110,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         P2Yacht = (Button) findViewById(R.id.P2YachtBtn);
         DiceRoll = (Button) findViewById(R.id.DiceRolling);
 
-        P1Aces.setEnabled(false);
-        P1Deuces.setEnabled(false);
-        P1Trees.setEnabled(false);
-        P1Fours.setEnabled(false);
-        P1Fives.setEnabled(false);
-        P1Sixes.setEnabled(false);
-        P1Choice.setEnabled(false);
-        P1FourAKind.setEnabled(false);
-        P1FullHouse.setEnabled(false);
-        P1SmallStraight.setEnabled(false);
-        P1LargeStraight.setEnabled(false);
-        P1Yacht.setEnabled(false);
+        //P2버튼 전부 비활성화
 
         P2Aces.setEnabled(false);
         P2Deuces.setEnabled(false);
@@ -142,10 +134,33 @@ public class GameplayingActivity2 extends AppCompatActivity {
         startturn();
     }
 
-    public void startturn() {
+    public void startturn() {//턴이 시작되면
         if (turnCount % 2 == 0) {//player1의 턴일때
-            //player2버튼 비활성화
-            Toast.makeText(getApplicationContext(),"player1 turn",Toast.LENGTH_LONG).show();
+            //메세지 출력
+            Toast.makeText(getApplicationContext(), "player1 turn", Toast.LENGTH_SHORT).show();
+
+
+            //P1Turn,P2Turn 을 가져와
+            TextView P1Turn = (TextView) findViewById(R.id.P1Turn);
+            TextView P2Turn = (TextView) findViewById(R.id.P2Turn);
+            //P1Turn은 MAGENTA색으로 P2Turn는 black으로 색변경
+            P1Turn.setTextColor(Color.MAGENTA);
+            P2Turn.setTextColor(Color.parseColor("#000000"));
+
+
+            //textView turn을가져와
+            TextView Turn = (TextView) findViewById(R.id.Turn);
+            //Turn의 텍스트를 넣기
+            String now_turn = (String) Turn.getText();
+            // "/"기준으로 문자열자르기
+            String[] now_turn_num = now_turn.split("/");
+            // 자른 문자열에서 숫자 부분만 떼네 1을 더한다.
+            int plus_turn = 1 + Integer.parseInt(now_turn_num[0]);
+            //+1해서
+            Turn.setText(Integer.toString(plus_turn) + "/12");
+            //기존 양식에 맞게 출력
+
+           //player2버튼 비활성화
             P2Aces.setEnabled(false);
             P2Deuces.setEnabled(false);
             P2Trees.setEnabled(false);
@@ -184,9 +199,18 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if (player1bottomitem[5] == 0)//버튼이 눌리기전일때만
                 P1Yacht.setEnabled(true);//버튼활성화'
 
-        } else {
+        } else {//player2의 턴일때
+            //메세지 출력
+            Toast.makeText(getApplicationContext(), "player2 turn", Toast.LENGTH_SHORT).show();
+
+            //P1Turn,P2Turn 을 가져와
+            TextView P1Turn = (TextView) findViewById(R.id.P1Turn);
+            TextView P2Turn = (TextView) findViewById(R.id.P2Turn);
+            //P2Turn은 MAGENTA색으로 P1Turn는 black으로 색변경
+            P2Turn.setTextColor(Color.MAGENTA);
+            P1Turn.setTextColor(Color.parseColor("#000000"));
+
             //player1버튼 비활성화
-            Toast.makeText(getApplicationContext(),"player2 turn",Toast.LENGTH_LONG).show();
             P1Aces.setEnabled(false);
             P1Deuces.setEnabled(false);
             P1Trees.setEnabled(false);
@@ -225,7 +249,9 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if (player2bottomitem[5] == 0)//버튼이 눌리기전일때만
                 P2Yacht.setEnabled(true);//버튼활성화'
         }
+        //주사위를 굴린뒤
         Rolldice();
+        //계산
         calculation();
 
 
@@ -233,51 +259,62 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
     public void onButtonClick(View v) {
         switch (v.getId()) {
+            //player 아무나 Aces버튼을 누를경우
             case R.id.P1AcesBtn:
             case R.id.P2AcesBtn:
                 Aces_Clicked();
                 break;
+            //player 아무나 Deuces버튼을 누를경우
             case R.id.P1DeucesBtn:
             case R.id.P2DeucesBtn:
                 Deuces_Clicked();
                 break;
-
+            //player 아무나 Threes버튼을 누를경우
             case R.id.P1ThreesBtn:
             case R.id.P2ThreesBtn:
                 Threes_Clicked();
                 break;
+            //player 아무나 Fours버튼을 누를경우
             case R.id.P1FoursBtn:
             case R.id.P2FoursBtn:
                 Fours_Clicked();
                 break;
+            //player 아무나 Fives버튼을 누를경우
             case R.id.P1FivesBtn:
             case R.id.P2FivesBtn:
                 Fives_Clicked();
                 break;
+            //player 아무나 Sixes버튼을 누를경우
             case R.id.P1SixesBtn:
             case R.id.P2SixesBtn:
                 Sixes_Clicked();
                 break;
+            //player 아무나 Choice버튼을 누를경우
             case R.id.P1ChoiceBtn:
             case R.id.P2ChoiceBtn:
                 Choice_Clicked();
                 break;
+            //player 아무나 FourOfaKind버튼을 누를경우
             case R.id.P1FourOfaKindBtn:
             case R.id.P2FourOfaKindBtn:
                 FourOfAKind_Clicked();
                 break;
+            //player 아무나 FullHouse버튼을 누를경우
             case R.id.P1FullHouseBtn:
             case R.id.P2FullHouseBtn:
                 FullHouse_Clicked();
                 break;
+            //player 아무나 SmallStraight버튼을 누를경우
             case R.id.P1SmallStraightBtn:
             case R.id.P2SmallStraightBtn:
                 SmallStraight_Clicked();
                 break;
+            //player 아무나 LargeStraight버튼을 누를경우
             case R.id.P1LargeStraightBtn:
             case R.id.P2LargeStraightBtn:
                 LargeStaight_Clicked();
                 break;
+            //player 아무나 Yacht버튼을 누를경우
             case R.id.P1YachtBtn:
             case R.id.P2YachtBtn:
                 Yacht_Clicked();
@@ -289,8 +326,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
     }
 
-    public void Aces_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Aces_Clicked() {//Aces버튼을 누를경우
+        //누구의 턴인지 파악
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Aces.getText()) + Integer.parseInt((String) P1Total_score.getText());
             String Subtotalsplit = (String) P1Bonus_check.getText();
             String[] Subtotalnum = Subtotalsplit.split("/");
@@ -299,7 +338,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
             P1Aces.setEnabled(false);
             player1topitem[0] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Aces.getText()) + Integer.parseInt((String) P2Total_score.getText());
             String Subtotalsplit = (String) P2Bonus_check.getText();
             String[] Subtotalnum = Subtotalsplit.split("/");
@@ -310,12 +350,16 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2topitem[0] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Deuces_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Deuces_Clicked() {//Deuces버튼을 누를경우
+        //누구의 턴인지 파악
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Deuces.getText()) + Integer.parseInt((String) P1Total_score.getText());
 
             String Subtotalsplit = (String) P1Bonus_check.getText();
@@ -326,7 +370,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             P1Deuces.setEnabled(false);
             player1topitem[1] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Deuces.getText()) + Integer.parseInt((String) P2Total_score.getText());
 
             String Subtotalsplit = (String) P2Bonus_check.getText();
@@ -339,12 +384,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2topitem[1] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Threes_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Threes_Clicked() {//Threes버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Trees.getText()) + Integer.parseInt((String) P1Total_score.getText());
 
             String Subtotalsplit = (String) P1Bonus_check.getText();
@@ -355,7 +403,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             P1Trees.setEnabled(false);
             player1topitem[2] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Trees.getText()) + Integer.parseInt((String) P2Total_score.getText());
 
             String Subtotalsplit = (String) P2Bonus_check.getText();
@@ -367,12 +416,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P2Trees.setEnabled(false);
             player2topitem[2] = 1;
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Fours_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Fours_Clicked() {//Fours버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Fours.getText()) + Integer.parseInt((String) P1Total_score.getText());
 
             String Subtotalsplit = (String) P1Bonus_check.getText();
@@ -381,7 +433,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
             player1topitem[3] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Fours.getText()) + Integer.parseInt((String) P2Total_score.getText());
 
             String Subtotalsplit = (String) P2Bonus_check.getText();
@@ -393,13 +446,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2topitem[3] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Fives_Clicked() {
-        if (turnCount % 2 == 0) {
-
+    public void Fives_Clicked() {//Fives버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Fives.getText()) + Integer.parseInt((String) P1Total_score.getText());
 
             String Subtotalsplit = (String) P1Bonus_check.getText();
@@ -410,7 +465,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             P1Fives.setEnabled(false);
             player1topitem[4] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Fives.getText()) + Integer.parseInt((String) P2Total_score.getText());
 
             String Subtotalsplit = (String) P2Bonus_check.getText();
@@ -423,13 +479,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2topitem[4] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Sixes_Clicked() {
-        if (turnCount % 2 == 0) {
-
+    public void Sixes_Clicked() {//Sixes버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Sixes.getText()) + Integer.parseInt((String) P1Total_score.getText());
 
             String Subtotalsplit = (String) P1Bonus_check.getText();
@@ -440,7 +498,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             P1Sixes.setEnabled(false);
             player1topitem[5] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Sixes.getText()) + Integer.parseInt((String) P2Total_score.getText());
 
             String Subtotalsplit = (String) P2Bonus_check.getText();
@@ -453,59 +512,73 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2topitem[5] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Choice_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Choice_Clicked() {//Choice버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Choice.getText()) + Integer.parseInt((String) P1Total_score.getText());
             P1Total_score.setText(Integer.toString(score));
             P1Choice.setEnabled(false);
             player1bottomitem[0] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Choice.getText()) + Integer.parseInt((String) P2Total_score.getText());
             P2Total_score.setText(Integer.toString(score));
             P2Choice.setEnabled(false);
             player2bottomitem[0] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
 
     }
 
-    public void FourOfAKind_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void FourOfAKind_Clicked() {//FourOfAKind버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1FourAKind.getText()) + Integer.parseInt((String) P1Total_score.getText());
             P1Total_score.setText(Integer.toString(score));
             P1FourAKind.setEnabled(false);
             player1bottomitem[1] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2FourAKind.getText()) + Integer.parseInt((String) P2Total_score.getText());
             P2Total_score.setText(Integer.toString(score));
             P2FourAKind.setEnabled(false);
             player2bottomitem[1] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void FullHouse_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void FullHouse_Clicked() {//FullHouse버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1FullHouse.getText()) + Integer.parseInt((String) P1Total_score.getText());
             P1Total_score.setText(Integer.toString(score));
             P1FullHouse.setEnabled(false);
             player1bottomitem[2] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2FullHouse.getText()) + Integer.parseInt((String) P2Total_score.getText());
             P2Total_score.setText(Integer.toString(score));
             P2FullHouse.setEnabled(false);
             player2bottomitem[2] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
@@ -522,69 +595,65 @@ public class GameplayingActivity2 extends AppCompatActivity {
             player2bottomitem[4] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void SmallStraight_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void SmallStraight_Clicked() {//SmallStraight버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1SmallStraight.getText()) + Integer.parseInt((String) P1Total_score.getText());
             P1Total_score.setText(Integer.toString(score));
             P1SmallStraight.setEnabled(false);
             player1bottomitem[3] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2SmallStraight.getText()) + Integer.parseInt((String) P2Total_score.getText());
             P2Total_score.setText(Integer.toString(score));
             P2SmallStraight.setEnabled(false);
             player2bottomitem[3] = 1;
 
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
-    public void Yacht_Clicked() {
-        if (turnCount % 2 == 0) {
+    public void Yacht_Clicked() {//Yacht버튼을 누를경우
+        if (turnCount % 2 == 0) {//player1이면
+            //P1 버튼 계산
             int score = Integer.parseInt((String) P1Yacht.getText()) + Integer.parseInt((String) P1Total_score.getText());
             P1Total_score.setText(Integer.toString(score));
             P1Yacht.setEnabled(false);
             player1bottomitem[5] = 1;
-        } else {
+        } else {//player2이면
+            //P2 버튼 계산
             int score = Integer.parseInt((String) P2Yacht.getText()) + Integer.parseInt((String) P2Total_score.getText());
             P2Total_score.setText(Integer.toString(score));
             P2Yacht.setEnabled(false);
             player2bottomitem[5] = 1;
         }
+        //턴카운트를 증가시키고
         turnCount++;
+        //다음턴 스타트
         startturn();
     }
 
     public void calculation() {// 계산함수
-
-
         calculation_Aces();//계산적용
-
         calculation_Deuces();
-
         calculation_Threes();
-
         calculation_Fours();
-
         calculation_Fives();
-
         calculation_Sixes();
-
-
         calculation_Choice();
-
         calculation_FourofaKind();
-
         calculation_FullHouse();
-
         calculation_SmallStraight();
-
         calculation_LargeStraight();
-
         calculation_Yacht();
 
 
@@ -659,10 +728,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[0] == 0) {
+            //player1이면서 player1의 Aces버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1AcesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         } else if ((turnCount % 2 == 1 && player2topitem[0] == 0)) {
+            //player2이면서 player2의 Aces버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2AcesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
@@ -679,9 +750,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[1] == 0) {
+            //player1이면서 player1의 Deuces버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1DeucesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if ((turnCount % 2 == 1 && player2topitem[1] == 0)) {
+            //player2이면서 player2의 Deuces버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2DeucesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -696,9 +769,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[2] == 0) {
+            //player1이면서 player1의 Threes버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1ThreesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[2] == 0) {
+            //player2이면서 player2의 Threes버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2ThreesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
@@ -715,9 +790,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[3] == 0) {
+            //player1이면서 player1의 Fours버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1FoursBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[3] == 0) {
+            //player2이면서 player2의 Fours버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2FoursBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
@@ -733,9 +810,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[4] == 0) {
+            //player1이면서 player1의 Fives버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1FivesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[4] == 0) {
+            //player2이면서 player2의 Fives버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2FivesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
@@ -751,9 +830,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1topitem[5] == 0) {
+            //player1이면서 player1의 Sixes버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1SixesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[5] == 0) {
+            //player2이면서 player2의 Sixes버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2SixesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -768,16 +849,18 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
 
         if (turnCount % 2 == 0 && player1bottomitem[0] == 0) {
+            //player1이면서 player1의 Choice버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1ChoiceBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[0] == 0) {
+            //player2이면서 player2의 Choice버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2ChoiceBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
 
     }
 
-    public void calculation_FourofaKind() {//주사위 이미지에 따라 Choice버튼 값 지정
+    public void calculation_FourofaKind() {//주사위 이미지에 따라 FourofaKind버튼 값 지정
         int btn_num = 0;
         int first_check = 0;
         int last_check = 0;
@@ -799,9 +882,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             btn_num = 0;
         }
         if (turnCount % 2 == 0 && player1bottomitem[1] == 0) {
+            //player1이면서 player1의 FourofaKind버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[1] == 0) {
+            //player2이면서 player2의 FourofaKind버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -838,13 +923,14 @@ public class GameplayingActivity2 extends AppCompatActivity {
             btn_num = 0;
         }
         if (turnCount % 2 == 0 && player1bottomitem[2] == 0) {
+            //player1이면서 player1의 FullHouse버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1FullHouseBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[2] == 0) {
-            {
-                btn_text_edit = (Button) findViewById(R.id.P2FullHouseBtn);
-                btn_text_edit.setText(Integer.toString(btn_num));
-            }
+            //player2이면서 player2의 FullHouse버튼이 아직 안눌렸으면
+            btn_text_edit = (Button) findViewById(R.id.P2FullHouseBtn);
+            btn_text_edit.setText(Integer.toString(btn_num));
+
         }
 
 
@@ -887,9 +973,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
         }
         if (turnCount % 2 == 0 && player1bottomitem[3] == 0) {
+            //player1이면서 player1의 SmallStraight버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1SmallStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[3] == 0) {
+            //player2이면서 player2의 SmallStraight버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2SmallStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -924,9 +1012,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
         }
         if (turnCount % 2 == 0 && player1bottomitem[4] == 0) {
+            //player1이면서 player1의 LargeStraight버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1LargeStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[4] == 0) {
+            //player2이면서 player2의 LargeStraight버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2LargeStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -942,8 +1032,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
             }
         }
         if (turnCount % 2 == 0 && player1bottomitem[5] == 0) {
+            //player1이면서 player1의 Yacht버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1YachtBtn);
         } else if (turnCount % 2 == 1 && player2bottomitem[5] == 0) {
+            //player1이면서 player1의 Yacht버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2YachtBtn);
         }
 
