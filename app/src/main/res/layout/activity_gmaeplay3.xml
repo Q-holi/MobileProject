@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingRight="16dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingTop="150dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/Aces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="100dp"
+            android:height="45dp"
+            android:gravity="center"
+            android:text="Aces"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/Deuces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Aces"
+            android:width="100dp"
+            android:height="45dp"
+            android:gravity="center"
+            android:text="Deuces"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/Threes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Deuces"
+            android:width="100dp"
+            android:height="45dp"
+            android:gravity="center"
+            android:text="Threes"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/Fours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Threes"
+            android:width="100dp"
+            android:height="45dp"
+            android:gravity="center"
+            android:text="Fours"
+            android:textSize="20dp" />
+    </RelativeLayout>
+</LinearLayout>

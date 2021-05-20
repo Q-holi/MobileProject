@@ -1,426 +1,544 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameplayingActivity2">
+    android:layout_marginLeft="5dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <!-- ScoreBoard -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+        <RelativeLayout
+            android:id="@+id/TrunBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/Trun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0/12"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/P1Trun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Trun"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="P1"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/P2Trun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1Trun"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="P2"
+                android:textSize="20dp" />
+        </RelativeLayout>
+        <!-- Aces-->
+        <RelativeLayout
+            android:id="@+id/AcesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/Aces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Aces"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1AcesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Aces" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2AcesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1AcesBtn" />
+        </RelativeLayout>
+        <!-- Deuces-->
+        <RelativeLayout
+            android:id="@+id/DeucesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Deuces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Deuces"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1DeucesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Deuces" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2DeucesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1DeucesBtn" />
+        </RelativeLayout>
+        <!-- Threes-->
+        <RelativeLayout
+            android:id="@+id/ThreesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Threes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Threes"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1ThreesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Threes" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2ThreesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1ThreesBtn" />
+        </RelativeLayout>
+        <!-- Fours-->
+        <RelativeLayout
+            android:id="@+id/FoursBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Fours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Fours"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1FoursBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Fours" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2FoursBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1FoursBtn" />
+        </RelativeLayout>
+        <!-- Fives-->
+        <RelativeLayout
+            android:id="@+id/FivesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Fives"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Fives"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1FivesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Fives" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2FivesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1FivesBtn" />
+        </RelativeLayout>
+        <!-- Sixes-->
+        <RelativeLayout
+            android:id="@+id/SixesBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Sixes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Sixes"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1SixesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Sixes" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2SixesBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1SixesBtn" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/BounsBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Bouns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="Subtotal"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P1Bouns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Bouns"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0/63"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P2Bouns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1Bouns"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0/63"
+                android:textSize="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/BounsBarCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/BounsCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="+35"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P1BounsCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/BounsCheck"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P2BounsCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1BounsCheck"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="20dp" />
+        </RelativeLayout>
+        <!-- Choice-->
+        <RelativeLayout
+            android:id="@+id/ChoiceBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Choice"
+                android:textSize="20dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1ChoiceBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Choice" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2ChoiceBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1ChoiceBtn" />
+        </RelativeLayout>
+        <!-- 4OfAKind-->
+        <RelativeLayout
+            android:id="@+id/FourOfaKindBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/FourOfaKind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="4 Of A Kind"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1FourOfaKindBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/FourOfaKind" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2FourOfaKindBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1FourOfaKindBtn" />
+        </RelativeLayout>
+        <!-- FullHouse-->
+        <RelativeLayout
+            android:id="@+id/FullHouseBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/FullHouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Full House"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1FullHouseBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/FullHouse" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2FullHouseBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1FullHouseBtn" />
+        </RelativeLayout>
+        <!-- S.Straight-->
+        <RelativeLayout
+            android:id="@+id/SmallStraightBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/SmallStraight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="S.Straight"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1SmallStraightBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/SmallStraight" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2SmallStraightBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1SmallStraightBtn" />
+        </RelativeLayout>
+        <!-- L.Straight-->
+        <RelativeLayout
+            android:id="@+id/LargeStraightBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/LargeStraight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="L.Straight"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1LargeStraightBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/LargeStraight" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2SLargeStraightBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1LargeStraightBtn" />
+        </RelativeLayout>
+        <!-- Yacht-->
+        <RelativeLayout
+            android:id="@+id/YachtBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Yacht"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="45dp"
+                android:gravity="center"
+                android:text="Yacht"
+                android:textSize="18dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P1YachtBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Yacht" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/P2YachtBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1YachtBtn" />
+        </RelativeLayout>
+        <!-- Total-->
+        <RelativeLayout
+            android:id="@+id/TotalBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="100dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="Total"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P1Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/Total"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/P2Total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/P1Total"
+                android:width="80dp"
+                android:height="35dp"
+                android:gravity="center"
+                android:text="0"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- Dice IMG && Roll DIce-->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
         <ImageView
-            android:id="@+id/dice5"
-            android:layout_width="50dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="344dp"
-            android:layout_marginTop="580dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/DiceImageView1"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/dice_num1" />
-
         <ImageView
-            android:id="@+id/dice2"
-            android:layout_width="50dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="104dp"
-            android:layout_marginTop="580dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/dice_num1" />
-
+            android:id="@+id/DiceImageView2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/dice_num1"/>
         <ImageView
-            android:id="@+id/dice3"
-            android:layout_width="50dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="580dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/DiceImageView3"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/dice_num1" />
-
         <ImageView
-            android:id="@+id/dice4"
-            android:layout_width="50dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="264dp"
-            android:layout_marginTop="580dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/DiceImageView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/dice_num1" />
-
         <ImageView
-            android:id="@+id/dice1"
-            android:layout_width="50dp"
-            android:layout_height="44dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="580dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/DiceImageView5"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/dice_num1" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Aces"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="205dp"
-        android:text="Aces"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Deuces"
-        android:layout_below="@+id/Aces"
-        android:layout_alignLeft="@+id/Aces"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Deuces"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/FourOfaKind"
-        android:layout_toLeftOf="@+id/FourOfaKind_btn"
-        android:layout_alignBottom="@+id/FourOfaKind_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="4 of a Kind"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Deuces_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_toRightOf="@+id/Deuces"
-        android:layout_alignBottom="@+id/Deuces"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Fours_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_toRightOf="@+id/Fours"
-        android:layout_alignBottom="@+id/Fours"
-        android:onClick="onButtonClick"
-        android:text="0"  />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/L.Straight"
-        android:layout_toLeftOf="@+id/LargeStraight_btn"
-        android:layout_alignBottom="@+id/LargeStraight_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="L.Straight"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Fours"
-        android:layout_below="@+id/Threes"
-        android:layout_alignLeft="@+id/Threes"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Fours"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/FullHouse"
-        android:layout_toLeftOf="@+id/FullHouse_btn"
-        android:layout_alignBottom="@+id/FullHouse_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="FullHouse"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/FullHouse_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/FourOfaKind_btn"
-        android:layout_alignRight="@+id/FourOfaKind_btn"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Sixes_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_alignBottom="@+id/Sixes"
-        android:layout_toRightOf="@+id/Sixes"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Threes_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_toRightOf="@+id/Threes"
-        android:layout_alignBottom="@+id/Threes"
-        android:onClick="onButtonClick"
-        android:text="0"  />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Threes"
-        android:layout_below="@+id/Deuces"
-        android:layout_alignLeft="@+id/Deuces"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Threes"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Fives"
-        android:layout_below="@+id/Fours"
-        android:layout_alignLeft="@+id/Fours"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Fives"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Fives_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_alignBottom="@+id/Fives"
-        android:layout_toRightOf="@+id/Fives"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Sixes"
-        android:layout_below="@+id/Fives"
-        android:layout_alignLeft="@+id/Fives"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:textAllCaps="false"
-        android:textSize="12sp"
-        android:text="Sixes"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Yacht_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/LargeStraight_btn"
-        android:layout_alignRight="@+id/LargeStraight_btn"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Yacht"
-        android:layout_toLeftOf="@+id/Yacht_btn"
-        android:layout_alignBottom="@+id/Yacht_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Yacht"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-s
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/LargeStraight_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/SmallStraight_btn"
-        android:layout_alignRight="@+id/SmallStraight_btn"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/S.Straight"
-        android:layout_toLeftOf="@+id/SmallStraight_btn"
-        android:layout_alignBottom="@+id/SmallStraight_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="S.Straight"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/SmallStraight_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/FullHouse_btn"
-        android:layout_alignRight="@+id/FullHouse_btn"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/FourOfaKind_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/Choice_btn"
-        android:layout_alignRight="@+id/Choice_btn"
-        android:onClick="onButtonClick"
-        android:text="0"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Choice"
-        android:layout_toLeftOf="@+id/Choice_btn"
-        android:layout_alignBottom="@+id/Choice_btn"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Choice"
-        android:textAllCaps="false"
-        android:textSize="12sp" />
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Aces_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_alignBottom="@+id/Aces"
-        android:layout_toRightOf="@+id/Aces"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Choice_btn"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="5dp"
-        android:onClick="onButtonClick"
-        android:text="0" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/diceRolling"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
-        android:onClick="Rolldice"
-        android:text="주사위 굴리기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="137dp" />
-
-
-
-    <TextView
-        android:id="@+id/player2_Banner"
-        android:layout_width="180dp"
-        android:layout_height="44dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="42dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="644dp"
-        android:gravity="center"
-        android:text="Player2"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="13dp" />
-
-
-
-    <TextView
-        android:id="@+id/Player1_Banner"
-        android:layout_width="184dp"
-        android:layout_height="81dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="603dp"
-        android:gravity="center"
-        android:text="Player1"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="15dp"
-        tools:layout_editor_absoluteY="13dp" />
-
-    <TextView
-        android:id="@+id/Bonus_Banner"
-        android:layout_below="@+id/Subtotal_Banner"
-        android:layout_alignLeft="@+id/Subtotal_Banner"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:text="+35 Bonus"
-         />
-
-    <TextView
-        android:id="@+id/Bonus_check"
-        android:layout_width="83dp"
-        android:layout_height="45dp"
-        android:layout_alignBottom="@+id/Bonus_Banner"
-        android:layout_toRightOf="@+id/Bonus_Banner"
-        android:gravity="center"
-        android:text="O"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/Total_banner"
-        android:layout_toLeftOf="@+id/Total_Score"
-        android:layout_alignBottom="@+id/Total_Score"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:text="Total"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        android:gravity="center"/>
-
-    <TextView
-        android:id="@+id/Total_Score"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_below="@+id/Yacht_btn"
-        android:layout_alignRight="@+id/Yacht_btn"
-        android:gravity="center"
-        android:text="0"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/Subtotal_Banner"
-        android:layout_below="@+id/Sixes"
-        android:layout_alignLeft="@+id/Sixes"
-        android:layout_width="110dp"
-        android:layout_height="44dp"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:text="Subtotal" />
-
-    <TextView
-        android:id="@+id/Subtotal"
-        android:layout_width="88dp"
-        android:layout_height="44dp"
-        android:layout_alignBottom="@+id/Subtotal_Banner"
-        android:layout_toRightOf="@+id/Subtotal_Banner"
-        android:gravity="center"
-        android:text="0/63"
-        android:textSize="20dp"/>
-
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/DiceRolling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onButtonClick"
+            android:background="@drawable/rolldicebutton"
+            android:text="주사위 굴리기"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</LinearLayout>

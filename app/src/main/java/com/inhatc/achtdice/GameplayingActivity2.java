@@ -15,23 +15,21 @@ import java.util.Random;
 public class GameplayingActivity2 extends AppCompatActivity {
     ImageView imageView = null;
     Button btn_text_edit = null;
-    Button btn_text_Aces = null;
-    Button btn_text_Deuces = null;
-    Button btn_text_Threes = null;
-    Button btn_text_Fours = null;
-    Button btn_text_Fives = null;
-    Button btn_text_Sixes = null;
-    Button btn_text_Choice = null;
-    Button btn_text_fourofaKind = null;
-    Button btn_text_FullHouse = null;
-    Button btn_text_LargeStraight = null;
-    Button btn_text_SmallStraight = null;
-    Button btn_text_Yacht = null;
-    TextView Total_score= null;
-    TextView Subtotal= null;
-    TextView Bonus_check= null;
-
-
+    Button P1Aces= null;
+    Button P1Deuces = null;
+    Button P1Trees = null;
+    Button P1Fours = null;
+    Button P1Fives = null;
+    Button P1Sixes = null;
+    Button P1Choice = null;
+    Button P1FourAKind = null;
+    Button P1FullHouse = null;
+    Button P1SmallStraight = null;
+    Button P1LargeStraight = null;
+    Button P1Yacht = null;
+    Button DiceRoll = null;
+    TextView P1Total_score= null;
+    TextView P1Bonus_check= null;
 
     int trunCount = 0; // 게임을 하면 턴이 필요하기 때문에 턴 카운트 숫자
     int rolldicecount=0; // 주사위굴리기 사용 제한은 2번이다.
@@ -51,200 +49,195 @@ public class GameplayingActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gameplaying2);
-        btn_text_Aces=(Button)findViewById(R.id.Aces_btn);
-        btn_text_Deuces=(Button)findViewById(R.id.Deuces_btn);
-        btn_text_Threes=(Button)findViewById(R.id.Threes_btn);
-        btn_text_Fours=(Button)findViewById(R.id.Fours_btn);
-        btn_text_Fives=(Button)findViewById(R.id.Fives_btn);
-        btn_text_Sixes=(Button)findViewById(R.id.Sixes_btn);
-        btn_text_Choice=(Button)findViewById(R.id.Choice_btn);
-        btn_text_fourofaKind=(Button)findViewById(R.id.FourOfaKind_btn);
-        btn_text_FullHouse=(Button)findViewById(R.id.FullHouse_btn);
-        btn_text_SmallStraight=(Button)findViewById(R.id.SmallStraight_btn);
-        btn_text_LargeStraight=(Button)findViewById(R.id.LargeStraight_btn);
-        btn_text_Yacht=(Button)findViewById(R.id.Yacht_btn);
+        P1Aces = (Button)findViewById(R.id.P1AcesBtn);
+        P1Deuces=(Button)findViewById(R.id.P1DeucesBtn);
+        P1Trees=(Button)findViewById(R.id.P1ThreesBtn);
+        P1Fours=(Button)findViewById(R.id.P1FoursBtn);
+        P1Fives=(Button)findViewById(R.id.P1FivesBtn);
+        P1Sixes=(Button)findViewById(R.id.P1SixesBtn);
+        P1Choice=(Button)findViewById(R.id.P1ChoiceBtn);
+        P1FourAKind=(Button)findViewById(R.id.P1FourOfaKindBtn);
+        P1FullHouse=(Button)findViewById(R.id.P1FullHouseBtn);
+        P1SmallStraight=(Button)findViewById(R.id.P1SmallStraightBtn);
+        P1LargeStraight=(Button)findViewById(R.id.P1LargeStraightBtn);
+        P1Yacht=(Button)findViewById(R.id.P1YachtBtn);
+        DiceRoll = (Button)findViewById(R.id.DiceRolling);
 
-        btn_text_Aces.setEnabled(false);
-        btn_text_Deuces.setEnabled(false);
-        btn_text_Threes.setEnabled(false);
-        btn_text_Fours.setEnabled(false);
-        btn_text_Fives.setEnabled(false);
-        btn_text_Sixes.setEnabled(false);
+        P1Aces.setEnabled(false);
+        P1Deuces.setEnabled(false);
+        P1Trees.setEnabled(false);
+        P1Fours.setEnabled(false);
+        P1Fives.setEnabled(false);
+        P1Sixes.setEnabled(false);
+        P1Choice.setEnabled(false);
+        P1FourAKind.setEnabled(false);
+        P1FullHouse.setEnabled(false);
+        P1SmallStraight.setEnabled(false);
+        P1LargeStraight.setEnabled(false);
+        P1Yacht.setEnabled(false);
 
-        btn_text_Choice.setEnabled(false);
-        btn_text_fourofaKind.setEnabled(false);
-        btn_text_FullHouse.setEnabled(false);
-        btn_text_SmallStraight.setEnabled(false);
-        btn_text_LargeStraight.setEnabled(false);
-        btn_text_Yacht.setEnabled(false);
-
-        Total_score = (TextView)findViewById(R.id.Total_Score);
-        Subtotal = (TextView)findViewById(R.id.Subtotal);
-        Bonus_check = (TextView)findViewById(R.id.Bonus_check);
-
-
-
-
+        P1Total_score = (TextView)findViewById(R.id.P1Total);
+        P1Bonus_check = (TextView)findViewById(R.id.P1Bouns);
     }
-
     public void onButtonClick(View v) {
         switch (v.getId()){
-            case R.id.Aces_btn :
+            case R.id.P1AcesBtn :
                 Aces_Clicked();
                 break ;
-            case R.id.Deuces_btn:
+            case R.id.P1DeucesBtn:
                 Deuces_Clicked();
                 break;
-            case R.id.Threes_btn:
+
+            case R.id.P1ThreesBtn:
                 Threes_Clicked();
                 break;
-            case R.id.Fours_btn:
+            case R.id.P1FoursBtn:
                 Fours_Clicked();
                 break;
-            case R.id.Fives_btn:
+            case R.id.P1FivesBtn:
                 Fives_Clicked();
                 break;
-            case R.id.Sixes_btn:
+            case R.id.P1SixesBtn:
                 Sixes_Clicked();
                 break;
-            case R.id.Choice_btn:
+            case R.id.P1ChoiceBtn:
                 Choice_Clicked();
                 break;
-            case R.id.FourOfaKind_btn:
-                fourofaKind_Clicked();
+            case R.id.P1FourOfaKindBtn:
+                FourOfAKind_Clicked();
                 break;
-            case R.id.FullHouse_btn:
+            case R.id.P1FullHouseBtn:
                 FullHouse_Clicked();
                 break;
-            case R.id.SmallStraight_btn:
+            case R.id.P1SmallStraightBtn:
                 SmallStraight_Clicked();
                 break;
-            case R.id.LargeStraight_btn:
+            case R.id.P1LargeStraightBtn:
                 LargeStaight_Clicked();
                 break;
-            case R.id.Yacht_btn:
+            case R.id.P1YachtBtn:
                 Yacht_Clicked();
+                break;
+            case R.id.DiceRolling:
+                Rolldice();
                 break;
 
         }
     }
     public void Aces_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Aces.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Aces.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Aces.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Aces.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Aces.setEnabled(false);
+        P1Aces.setEnabled(false);
         player1topitem[0] = 1;
     }
     public void Deuces_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Deuces.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Deuces.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Deuces.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Deuces.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Deuces.setEnabled(false);
+        P1Deuces.setEnabled(false);
         player1topitem[1] = 1;
     }
     public void Threes_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Threes.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Trees.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Threes.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Trees.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Threes.setEnabled(false);
+        P1Trees.setEnabled(false);
         player1topitem[2] = 1;
     }
     public void Fours_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Fours.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Fours.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Fours.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Fours.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Fours.setEnabled(false);
+        P1Fours.setEnabled(false);
         player1topitem[3] = 1;
     }
     public void Fives_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Fives.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Fives.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Fives.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Fives.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Fives.setEnabled(false);
+        P1Fives.setEnabled(false);
         player1topitem[4] = 1;
     }
     public void Sixes_Clicked(){
 
-        int score = Integer.parseInt((String) btn_text_Sixes.getText())+Integer.parseInt((String) Total_score.getText());
+        int score = Integer.parseInt((String) P1Sixes.getText())+Integer.parseInt((String) P1Total_score.getText());
 
-        String Subtotalsplit = (String)Subtotal.getText();
+        String Subtotalsplit = (String)P1Bonus_check.getText();
         String[] Subtotalnum = Subtotalsplit.split("/");
-        int subscore =Integer.parseInt((String) btn_text_Sixes.getText())+Integer.parseInt(Subtotalnum[0]);
-        Total_score.setText(Integer.toString(score));
-        Subtotal.setText(Integer.toString(subscore)+"/63");
+        int subscore =Integer.parseInt((String) P1Sixes.getText())+Integer.parseInt(Subtotalnum[0]);
+        P1Total_score.setText(Integer.toString(score));
+        P1Bonus_check.setText(Integer.toString(subscore)+"/63");
 
-        btn_text_Sixes.setEnabled(false);
+        P1Sixes.setEnabled(false);
         player1topitem[5] = 1;
     }
-
     public void Choice_Clicked(){
-        int score = Integer.parseInt((String) btn_text_Choice.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_Choice.setEnabled(false);
+        int score = Integer.parseInt((String) P1Choice.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1Choice.setEnabled(false);
         player1bottomitem[0] = 1;
     }
-    public void fourofaKind_Clicked(){
-        int score = Integer.parseInt((String) btn_text_fourofaKind.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_fourofaKind.setEnabled(false);
+    public void FourOfAKind_Clicked(){
+        int score = Integer.parseInt((String) P1FourAKind.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1FourAKind.setEnabled(false);
         player1bottomitem[1] = 1;
     }
     public void FullHouse_Clicked(){
-        int score = Integer.parseInt((String) btn_text_FullHouse.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_FullHouse.setEnabled(false);
+        int score = Integer.parseInt((String) P1FullHouse.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1FullHouse.setEnabled(false);
         player1bottomitem[2] = 1;
     }
     public void LargeStaight_Clicked(){
-        int score = Integer.parseInt((String) btn_text_LargeStraight.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_LargeStraight.setEnabled(false);
+        int score = Integer.parseInt((String) P1LargeStraight.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1LargeStraight.setEnabled(false);
         player1bottomitem[4] = 1;
     }
     public void SmallStraight_Clicked(){
-        int score = Integer.parseInt((String) btn_text_SmallStraight.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_SmallStraight.setEnabled(false);
+        int score = Integer.parseInt((String) P1SmallStraight.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1SmallStraight.setEnabled(false);
         player1bottomitem[3] = 1;
     }
     public void Yacht_Clicked(){
-        int score = Integer.parseInt((String) btn_text_Yacht.getText())+Integer.parseInt((String) Total_score.getText());
-        Total_score.setText(Integer.toString(score));
-        btn_text_Yacht.setEnabled(false);
+        int score = Integer.parseInt((String) P1Yacht.getText())+Integer.parseInt((String) P1Total_score.getText());
+        P1Total_score.setText(Integer.toString(score));
+        P1Yacht.setEnabled(false);
         player1bottomitem[5] = 1;
     }
-
-
     public void calculation(){// 계산함수
         if(player1topitem[0]==0)//버튼이 초기화된 상태일 때만
             calculation_Aces();//계산적용
@@ -262,7 +255,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         if(player1bottomitem[0]==0)
             calculation_Choice();
         if(player1bottomitem[1]==0)
-            calculation_fourofaKind();
+            calculation_FourofaKind();
         if(player1bottomitem[2]==0)
             calculation_FullHouse();
         if(player1bottomitem[3]==0)
@@ -273,79 +266,72 @@ public class GameplayingActivity2 extends AppCompatActivity {
             calculation_Yacht();
 
     }
-    public void Rolldice(View view){//주사위 굴리기
+    public void Rolldice(){//주사위 굴리기
         Random roll = new Random();
         int randomnum=0;
         randomnum = roll.nextInt(6)+1;//랜덤값생성
-        randomnum = 1;
         Dice_order_in(1);//첫번째 주사위선택
         Dice_image_in(randomnum);//첫번째 주사위의 이미지를 주사위 눈에 맞춰 변경
         Diceorder[0]= randomnum;//Diceorder 배열 [0]에 나왔던 랜덤값 입력
 
         randomnum = roll.nextInt(6)+1;
-        randomnum = 1;
         Dice_order_in(2);
         Dice_image_in(randomnum);
         Diceorder[1]= randomnum;
 
         randomnum = roll.nextInt(6)+1;
-        randomnum = 1;
         Dice_order_in(3);
         Dice_image_in(randomnum);
         Diceorder[2]= randomnum;
 
         randomnum = roll.nextInt(6)+1;
-        randomnum = 6;
         Dice_order_in(4);
         Dice_image_in(randomnum);
         Diceorder[3]= randomnum;
 
         randomnum = roll.nextInt(6)+1;
-        randomnum = 1;
         Dice_order_in(5);
         Dice_image_in(randomnum);
         Diceorder[4]= randomnum;
-
         calculation();
-
         if(player1topitem[0]==0)//버튼이 눌리기전일때만
-            btn_text_Aces.setEnabled(true);//버튼활성화'
+            P1Aces.setEnabled(true);//버튼활성화'
         if(player1topitem[1]==0)//버튼이 눌리기전일때만
-            btn_text_Deuces.setEnabled(true);//버튼활성화
+            P1Deuces.setEnabled(true);//버튼활성화
         if(player1topitem[2]==0)
-            btn_text_Threes.setEnabled(true);
+            P1Trees.setEnabled(true);
         if(player1topitem[3]==0)
-            btn_text_Fours.setEnabled(true);
+            P1Fours.setEnabled(true);
         if(player1topitem[4]==0)
-            btn_text_Fives.setEnabled(true);
+            P1Fives.setEnabled(true);
         if(player1topitem[5]==0)
-            btn_text_Sixes.setEnabled(true);
+            P1Sixes.setEnabled(true);
 
         if(player1bottomitem[0]==0)//버튼이 눌리기전일때만
-            btn_text_Choice.setEnabled(true);//버튼활성화'
+            P1Choice.setEnabled(true);//버튼활성화'
         if(player1bottomitem[1]==0)//버튼이 눌리기전일때만
-            btn_text_fourofaKind.setEnabled(true);//버튼활성화'
+            P1FourAKind.setEnabled(true);//버튼활성화'
         if(player1bottomitem[2]==0)//버튼이 눌리기전일때만
-            btn_text_FullHouse.setEnabled(true);//버튼활성화'
+            P1FullHouse.setEnabled(true);//버튼활성화'
         if(player1bottomitem[3]==0)//버튼이 눌리기전일때만
-            btn_text_SmallStraight.setEnabled(true);//버튼활성화'
+            P1SmallStraight.setEnabled(true);//버튼활성화'
         if(player1bottomitem[4]==0)//버튼이 눌리기전일때만
-            btn_text_LargeStraight.setEnabled(true);//버튼활성화'
+            P1LargeStraight.setEnabled(true);//버튼활성화'
         if(player1bottomitem[5]==0)//버튼이 눌리기전일때만
-            btn_text_Yacht.setEnabled(true);//버튼활성화'
+            P1Yacht.setEnabled(true);//버튼활성화'
     }
 
     public void Dice_order_in(int diceorder){//몇번째 주사위에 이미지를 넣을것인지 지정
         if(diceorder==1){
-            imageView = (ImageView)findViewById(R.id.dice1);
+            imageView = (ImageView)findViewById(R.id.DiceImageView1);
         }else if(diceorder==2){
-            imageView = (ImageView)findViewById(R.id.dice2);
+            imageView = (ImageView)findViewById(R.id.DiceImageView2);
         }else if(diceorder==3){
-            imageView = (ImageView)findViewById(R.id.dice3);
+            imageView = (ImageView)findViewById(R.id.DiceImageView3);
         }else if(diceorder==4){
-            imageView = (ImageView)findViewById(R.id.dice4);
+            imageView = (ImageView)findViewById(R.id.DiceImageView4);
         }else{
-            imageView = (ImageView)findViewById(R.id.dice5);
+            imageView = (ImageView)findViewById(R.id.DiceImageView5);
         }
     }
     public void Dice_image_in(int dicenum){//랜덤값에 따라 이미지 변경
@@ -369,7 +355,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 1){
                 btn_num += 1;
             }
-            btn_text_edit =(Button)findViewById(R.id.Aces_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1AcesBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -381,7 +367,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 2){
                 btn_num += 2;
             }
-            btn_text_edit =(Button)findViewById(R.id.Deuces_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1DeucesBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -393,7 +379,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 3){
                 btn_num += 3;
             }
-            btn_text_edit =(Button)findViewById(R.id.Threes_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1ThreesBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -405,7 +391,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 4){
                 btn_num += 4;
             }
-            btn_text_edit =(Button)findViewById(R.id.Fours_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FoursBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -417,7 +403,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 5){
                 btn_num += 5;
             }
-            btn_text_edit =(Button)findViewById(R.id.Fives_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FivesBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -429,7 +415,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if(Diceorder[i] == 6){
                 btn_num += 6;
             }
-            btn_text_edit =(Button)findViewById(R.id.Sixes_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1SixesBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
         }
@@ -441,13 +427,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             btn_num += Diceorder[i];
         }
-            btn_text_edit =(Button)findViewById(R.id.Choice_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1ChoiceBtn);
 
             btn_text_edit.setText(Integer.toString(btn_num));
 
 
     }
-    public void calculation_fourofaKind() {//주사위 이미지에 따라 Choice버튼 값 지정
+    public void calculation_FourofaKind() {//주사위 이미지에 따라 Choice버튼 값 지정
         int btn_num =0;
         int first_check=0;
         int last_check=0;
@@ -465,10 +451,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
             for(int i=0; i<Diceorder.length; i++) {
                 btn_num += Diceorder[i];
             }
-            btn_text_edit =(Button)findViewById(R.id.FourOfaKind_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }else {
-            btn_text_edit =(Button)findViewById(R.id.FourOfaKind_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(0));
 
             }
@@ -501,11 +487,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             for(int i=0; i<Diceorder.length; i++) {
                 btn_num += Diceorder[i];
             }
-            btn_text_edit =(Button)findViewById(R.id.FullHouse_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FullHouseBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }else {
-            btn_text_edit =(Button)findViewById(R.id.FullHouse_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1FullHouseBtn);
             btn_text_edit.setText(Integer.toString(0));
 
         }
@@ -540,7 +526,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         if(dice_cnt[0]==1 && dice_cnt[1] == 1 && dice_cnt[2]==1 && dice_cnt[3] == 1 && dice_cnt[4]==1 && dice_cnt[5] == 0)
             Small =1;
 
-        btn_text_edit =(Button)findViewById(R.id.SmallStraight_btn);
+        btn_text_edit =(Button)findViewById(R.id.P1SmallStraightBtn);
         if(Small==1){
             btn_text_edit.setText(Integer.toString(15));
         }else{
@@ -567,7 +553,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         if(dice_cnt[0]==1 && dice_cnt[1] == 1 && dice_cnt[2]==1 && dice_cnt[3] == 1 && dice_cnt[4]==1 && dice_cnt[5] == 0)
             Small =1;
 
-        btn_text_edit =(Button)findViewById(R.id.LargeStraight_btn);
+        btn_text_edit =(Button)findViewById(R.id.P1LargeStraightBtn);
         if(Small==1){
             btn_text_edit.setText(Integer.toString(25));
         }else{
@@ -588,10 +574,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
             for(int i=0; i<Diceorder.length; i++) {
                 btn_num += Diceorder[i];
             }
-            btn_text_edit =(Button)findViewById(R.id.Yacht_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1YachtBtn);
             btn_text_edit.setText(Integer.toString(50));
         }else {
-            btn_text_edit =(Button)findViewById(R.id.Yacht_btn);
+            btn_text_edit =(Button)findViewById(R.id.P1YachtBtn);
             btn_text_edit.setText(Integer.toString(0));
 
         }
