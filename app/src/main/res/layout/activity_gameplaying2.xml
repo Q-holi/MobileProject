@@ -35,6 +35,7 @@
                 android:gravity="center"
                 android:text="P1"
                 android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/P2Trun"
                 android:layout_width="wrap_content"
@@ -66,12 +67,14 @@
                 android:id="@+id/P1AcesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/Aces" />
+                android:layout_toRightOf="@+id/Aces"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2AcesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/P1AcesBtn" />
         </RelativeLayout>
         <!-- Deuces-->
@@ -94,12 +97,14 @@
                 android:id="@+id/P1DeucesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/Deuces" />
+                android:layout_toRightOf="@+id/Deuces"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2DeucesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/P1DeucesBtn" />
         </RelativeLayout>
         <!-- Threes-->
@@ -122,12 +127,14 @@
                 android:id="@+id/P1ThreesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/Threes" />
+                android:layout_toRightOf="@+id/Threes"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2ThreesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/P1ThreesBtn" />
         </RelativeLayout>
         <!-- Fours-->
@@ -150,13 +157,15 @@
                 android:id="@+id/P1FoursBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/Fours" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2FoursBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1FoursBtn" />
+                android:layout_toRightOf="@+id/P1FoursBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- Fives-->
         <RelativeLayout
@@ -178,13 +187,15 @@
                 android:id="@+id/P1FivesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/Fives" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2FivesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1FivesBtn" />
+                android:layout_toRightOf="@+id/P1FivesBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- Sixes-->
         <RelativeLayout
@@ -206,12 +217,14 @@
                 android:id="@+id/P1SixesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/Sixes" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2SixesBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/P1SixesBtn" />
         </RelativeLayout>
         <RelativeLayout
@@ -274,7 +287,7 @@
                 android:width="80dp"
                 android:height="35dp"
                 android:gravity="center"
-                android:text="0"
+                android:text="X"
                 android:textSize="20dp" />
 
             <TextView
@@ -285,7 +298,7 @@
                 android:width="80dp"
                 android:height="35dp"
                 android:gravity="center"
-                android:text="0"
+                android:text="X"
                 android:textSize="20dp" />
         </RelativeLayout>
         <!-- Choice-->
@@ -308,13 +321,15 @@
                 android:id="@+id/P1ChoiceBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/Choice" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2ChoiceBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1ChoiceBtn" />
+                android:layout_toRightOf="@+id/P1ChoiceBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- 4OfAKind-->
         <RelativeLayout
@@ -336,12 +351,14 @@
                 android:id="@+id/P1FourOfaKindBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/FourOfaKind" />
+                android:layout_toRightOf="@+id/FourOfaKind"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2FourOfaKindBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/P1FourOfaKindBtn" />
         </RelativeLayout>
         <!-- FullHouse-->
@@ -364,13 +381,15 @@
                 android:id="@+id/P1FullHouseBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/FullHouse" />
+                android:layout_toRightOf="@+id/FullHouse"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2FullHouseBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1FullHouseBtn" />
+                android:layout_toRightOf="@+id/P1FullHouseBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- S.Straight-->
         <RelativeLayout
@@ -392,13 +411,15 @@
                 android:id="@+id/P1SmallStraightBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/SmallStraight" />
+                android:layout_toRightOf="@+id/SmallStraight"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2SmallStraightBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1SmallStraightBtn" />
+                android:layout_toRightOf="@+id/P1SmallStraightBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- L.Straight-->
         <RelativeLayout
@@ -420,13 +441,15 @@
                 android:id="@+id/P1LargeStraightBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/LargeStraight" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/P2SLargeStraightBtn"
+                android:id="@+id/P2LargeStraightBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1LargeStraightBtn" />
+                android:layout_toRightOf="@+id/P1LargeStraightBtn"
+                android:onClick="onButtonClick"/>
         </RelativeLayout>
         <!-- Yacht-->
         <RelativeLayout
@@ -448,13 +471,15 @@
                 android:id="@+id/P1YachtBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
                 android:layout_toRightOf="@+id/Yacht" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2YachtBtn"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/P1YachtBtn" />
+                android:layout_toRightOf="@+id/P1YachtBtn"
+                android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- Total-->
         <RelativeLayout
