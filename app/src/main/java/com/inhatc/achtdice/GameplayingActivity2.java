@@ -47,6 +47,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
     TextView P2Total_score = null;
     TextView P2Bonus_check = null;
 
+    //주사위 5개
+    ImageView touch_dice1 = null;
+    ImageView touch_dice2 = null;
+    ImageView touch_dice3 = null;
+    ImageView touch_dice4 = null;
+    ImageView touch_dice5 = null;
+
     Button DiceRoll = null;
 
     int turnCount = 0; // 게임을 하면 턴이 필요하기 때문에 턴 카운트 숫자
@@ -61,7 +68,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
     int player1bonusscore = 0; // 플레이어1이 상단 항목 점수가 63이상이면 35점을 추가로 흭득한다.
     int player2bonusscore = 0;//플레이어2가 상단 항목 점수가 63이상이면 35점을 추가로 흭득한다.
     int[] Diceorder = {0, 0, 0, 0, 0};//주사위 순서에 따라 저장되는 값 [0]에는 왼쪽에서 첫번째 주사위값이 저장됨
-
+    int[] SelectedDiceorder = {0, 0, 0, 0, 0};//주사위를 고정시키는 값 1이면 고정
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +137,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
         P2Total_score = (TextView) findViewById(R.id.P2Total);
         P2Bonus_check = (TextView) findViewById(R.id.P2Bouns);
+
+        touch_dice1 = (ImageView) findViewById(R.id.DiceImageView1);
+        touch_dice2 = (ImageView) findViewById(R.id.DiceImageView2);
+        touch_dice3 = (ImageView) findViewById(R.id.DiceImageView3);
+        touch_dice4 = (ImageView) findViewById(R.id.DiceImageView4);
+        touch_dice5 = (ImageView) findViewById(R.id.DiceImageView5);
+
 
         startturn();
     }
@@ -249,6 +263,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             if (player2bottomitem[5] == 0)//버튼이 눌리기전일때만
                 P2Yacht.setEnabled(true);//버튼활성화'
         }
+
+
+        SelectedDiceorder[0] = 0;
+        SelectedDiceorder[1] = 0;
+        SelectedDiceorder[2] = 0;
+        SelectedDiceorder[3] = 0;
+        SelectedDiceorder[4] = 0;
         //주사위를 굴린뒤
         Rolldice();
         //계산
@@ -323,6 +344,77 @@ public class GameplayingActivity2 extends AppCompatActivity {
                 Rolldice();
                 break;
 
+            case R.id.DiceImageView1://첫번째 주사위 이미지가 터치되면
+                Dice1_Clicked();
+                break;
+            case R.id.DiceImageView2:
+                Dice2_Clicked();
+                break;
+            case R.id.DiceImageView3:
+                Dice3_Clicked();
+                break;
+            case R.id.DiceImageView4:
+                Dice4_Clicked();
+                break;
+            case R.id.DiceImageView5:
+                Dice5_Clicked();
+                break;
+
+        }
+    }
+    public void Dice1_Clicked() {
+        if(SelectedDiceorder[0] ==0){//고정이 안되있으면 고정
+            SelectedDiceorder[0] =1;
+            Dice_order_in(1);
+            Selected_Dice_image_in(Diceorder[0]);
+        }else if(SelectedDiceorder[0] ==1){//고정되있으면 고정헤제
+            SelectedDiceorder[0] =0;
+            Dice_order_in(1);
+            Dice_image_in(Diceorder[0]);
+        }
+    }
+    public void Dice2_Clicked() {
+        if(SelectedDiceorder[1] ==0){//고정이 안되있으면 고정
+            SelectedDiceorder[1] =1;
+            Dice_order_in(2);
+            Selected_Dice_image_in(Diceorder[1]);
+        }else if(SelectedDiceorder[1] ==1){//고정되있으면 고정헤제
+            SelectedDiceorder[1] =0;
+            Dice_order_in(2);
+            Dice_image_in(Diceorder[1]);
+        }
+    }
+    public void Dice3_Clicked() {
+        if(SelectedDiceorder[2] ==0){//고정이 안되있으면 고정
+            SelectedDiceorder[2] =1;
+            Dice_order_in(3);
+            Selected_Dice_image_in(Diceorder[2]);
+        }else if(SelectedDiceorder[2] ==1){//고정되있으면 고정헤제
+            SelectedDiceorder[2] =0;
+            Dice_order_in(3);
+            Dice_image_in(Diceorder[2]);
+        }
+    }
+    public void Dice4_Clicked() {
+        if(SelectedDiceorder[3] ==0){//고정이 안되있으면 고정
+            SelectedDiceorder[3] =1;
+            Dice_order_in(4);
+            Selected_Dice_image_in(Diceorder[3]);
+        }else if(SelectedDiceorder[3] ==1){//고정되있으면 고정헤제
+            SelectedDiceorder[3] =0;
+            Dice_order_in(4);
+            Dice_image_in(Diceorder[3]);
+        }
+    }
+    public void Dice5_Clicked() {
+        if(SelectedDiceorder[4] ==0){//고정이 안되있으면 고정
+            SelectedDiceorder[4] =1;
+            Dice_order_in(5);
+            Selected_Dice_image_in(Diceorder[4]);
+        }else if(SelectedDiceorder[4] ==1){//고정되있으면 고정헤제
+            SelectedDiceorder[4] =0;
+            Dice_order_in(5);
+            Dice_image_in(Diceorder[4]);
         }
     }
 
@@ -662,30 +754,40 @@ public class GameplayingActivity2 extends AppCompatActivity {
     public void Rolldice() {//주사위 굴리기
         Random roll = new Random();
         int randomnum = 0;
-        randomnum = roll.nextInt(6) + 1;//랜덤값생성
-        Dice_order_in(1);//첫번째 주사위선택
-        Dice_image_in(randomnum);//첫번째 주사위의 이미지를 주사위 눈에 맞춰 변경
-        Diceorder[0] = randomnum;//Diceorder 배열 [0]에 나왔던 랜덤값 입력
+        if(SelectedDiceorder[0] ==0) {//첫번째 주사위가 고정되있지 않으면
+            randomnum = roll.nextInt(6) + 1;//랜덤값생성
+            Dice_order_in(1);//첫번째 주사위선택
+            Dice_image_in(randomnum);//첫번째 주사위의 이미지를 주사위 눈에 맞춰 변경
+            Diceorder[0] = randomnum;//Diceorder 배열 [0]에 나왔던 랜덤값 입력
+        }
 
-        randomnum = roll.nextInt(6) + 1;
-        Dice_order_in(2);
-        Dice_image_in(randomnum);
-        Diceorder[1] = randomnum;
+        if(SelectedDiceorder[1] ==0) {
+            randomnum = roll.nextInt(6) + 1;
+            Dice_order_in(2);
+            Dice_image_in(randomnum);
+            Diceorder[1] = randomnum;
+        }
 
-        randomnum = roll.nextInt(6) + 1;
-        Dice_order_in(3);
-        Dice_image_in(randomnum);
-        Diceorder[2] = randomnum;
+        if(SelectedDiceorder[2] ==0) {
+            randomnum = roll.nextInt(6) + 1;
+            Dice_order_in(3);
+            Dice_image_in(randomnum);
+            Diceorder[2] = randomnum;
+        }
 
-        randomnum = roll.nextInt(6) + 1;
-        Dice_order_in(4);
-        Dice_image_in(randomnum);
-        Diceorder[3] = randomnum;
+        if(SelectedDiceorder[3] ==0) {
+            randomnum = roll.nextInt(6) + 1;
+            Dice_order_in(4);
+            Dice_image_in(randomnum);
+            Diceorder[3] = randomnum;
+        }
 
-        randomnum = roll.nextInt(6) + 1;
-        Dice_order_in(5);
-        Dice_image_in(randomnum);
-        Diceorder[4] = randomnum;
+        if(SelectedDiceorder[4] ==0) {
+            randomnum = roll.nextInt(6) + 1;
+            Dice_order_in(5);
+            Dice_image_in(randomnum);
+            Diceorder[4] = randomnum;
+        }
         calculation();
 
     }
@@ -704,6 +806,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
     }
 
+
+
     public void Dice_image_in(int dicenum) {//랜덤값에 따라 이미지 변경
         if (dicenum == 1) {
             imageView.setImageResource(R.drawable.dice_num1);
@@ -717,6 +821,21 @@ public class GameplayingActivity2 extends AppCompatActivity {
             imageView.setImageResource(R.drawable.dice_num5);
         } else {
             imageView.setImageResource(R.drawable.dice_num6);
+        }
+    }
+    public void Selected_Dice_image_in(int dicenum) {//선택된 주사위의 이미지변경
+        if (dicenum == 1) {
+            imageView.setImageResource(R.drawable.selected_dice_num1);
+        } else if (dicenum == 2) {
+            imageView.setImageResource(R.drawable.selected_dice_num2);
+        } else if (dicenum == 3) {
+            imageView.setImageResource(R.drawable.selected_dice_num3);
+        } else if (dicenum == 4) {
+            imageView.setImageResource(R.drawable.selected_dice_num4);
+        } else if (dicenum == 5) {
+            imageView.setImageResource(R.drawable.selected_dice_num5);
+        } else {
+            imageView.setImageResource(R.drawable.selected_dice_num6);
         }
     }
 
@@ -1005,7 +1124,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
         if (dice_cnt[0] == 1 && dice_cnt[1] == 1 && dice_cnt[2] == 1 && dice_cnt[3] == 1 && dice_cnt[4] == 1 && dice_cnt[5] == 0)
             Small = 1;
         if (Small == 1) {
-            btn_num = 15;
+            btn_num = 25;
 
         } else {
             btn_num = 0;
@@ -1035,7 +1154,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             //player1이면서 player1의 Yacht버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P1YachtBtn);
         } else if (turnCount % 2 == 1 && player2bottomitem[5] == 0) {
-            //player1이면서 player1의 Yacht버튼이 아직 안눌렸으면
+            //player2이면서 player1의 Yacht버튼이 아직 안눌렸으면
             btn_text_edit = (Button) findViewById(R.id.P2YachtBtn);
         }
 
