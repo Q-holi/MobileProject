@@ -54,6 +54,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
     ImageView touch_dice4 = null;
     ImageView touch_dice5 = null;
 
+    TextView DiceRollingcount = null;
+
     Button DiceRoll = null;
 
     int turnCount = 0; // 게임을 하면 턴이 필요하기 때문에 턴 카운트 숫자
@@ -143,6 +145,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
         touch_dice3 = (ImageView) findViewById(R.id.DiceImageView3);
         touch_dice4 = (ImageView) findViewById(R.id.DiceImageView4);
         touch_dice5 = (ImageView) findViewById(R.id.DiceImageView5);
+
+        DiceRollingcount = (TextView) findViewById(R.id.DiceRollingcount);
 
 
         startturn();
@@ -264,6 +268,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
                 P2Yacht.setEnabled(true);//버튼활성화'
         }
 
+        rolldicecount=0;
+        DiceRollingcount.setText("0/2");
+        DiceRoll.setEnabled(true);
+
 
         SelectedDiceorder[0] = 0;
         SelectedDiceorder[1] = 0;
@@ -340,7 +348,14 @@ public class GameplayingActivity2 extends AppCompatActivity {
             case R.id.P2YachtBtn:
                 Yacht_Clicked();
                 break;
+
             case R.id.DiceRolling:
+                rolldicecount++;
+                DiceRollingcount.setText(Integer.toString(rolldicecount) + "/2");
+
+                if(rolldicecount==2){
+                    DiceRoll.setEnabled(false);
+                }
                 Rolldice();
                 break;
 
@@ -428,6 +443,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P1Aces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
             P1Aces.setEnabled(false);
             player1topitem[0] = 1;
         } else {//player2이면
@@ -438,6 +459,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Aces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
             P2Aces.setEnabled(false);
             player2topitem[0] = 1;
 
@@ -460,6 +487,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
 
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
+
             P1Deuces.setEnabled(false);
             player1topitem[1] = 1;
         } else {//player2이면
@@ -471,6 +505,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Deuces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
 
             P2Deuces.setEnabled(false);
             player2topitem[1] = 1;
@@ -493,6 +534,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
 
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
+
             P1Trees.setEnabled(false);
             player1topitem[2] = 1;
         } else {//player2이면
@@ -504,6 +552,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Trees.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
 
             P2Trees.setEnabled(false);
             player2topitem[2] = 1;
@@ -524,6 +579,14 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P1Fours.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
+
             player1topitem[3] = 1;
         } else {//player2이면
             //P2 버튼 계산
@@ -534,6 +597,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Fours.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
 
             player2topitem[3] = 1;
 
@@ -555,6 +625,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
 
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
+
             P1Fives.setEnabled(false);
             player1topitem[4] = 1;
         } else {//player2이면
@@ -566,6 +643,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Fives.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
 
             P2Fives.setEnabled(false);
             player2topitem[4] = 1;
@@ -588,6 +672,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             P1Total_score.setText(Integer.toString(score));
             P1Bonus_check.setText(Integer.toString(subscore) + "/63");
 
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P1Total_score.getText());
+                P1Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                Bonuscheck.setText("O");
+            }
+
             P1Sixes.setEnabled(false);
             player1topitem[5] = 1;
         } else {//player2이면
@@ -599,6 +690,13 @@ public class GameplayingActivity2 extends AppCompatActivity {
             int subscore = Integer.parseInt((String) P2Sixes.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
             P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+
+            if(subscore>=63){
+                score = 35+Integer.parseInt((String) P2Total_score.getText());
+                P2Total_score.setText(Integer.toString(score));
+                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                Bonuscheck.setText("O");
+            }
 
             P2Sixes.setEnabled(false);
             player2topitem[5] = 1;
@@ -754,12 +852,14 @@ public class GameplayingActivity2 extends AppCompatActivity {
     public void Rolldice() {//주사위 굴리기
         Random roll = new Random();
         int randomnum = 0;
+
         if(SelectedDiceorder[0] ==0) {//첫번째 주사위가 고정되있지 않으면
             randomnum = roll.nextInt(6) + 1;//랜덤값생성
             Dice_order_in(1);//첫번째 주사위선택
             Dice_image_in(randomnum);//첫번째 주사위의 이미지를 주사위 눈에 맞춰 변경
             Diceorder[0] = randomnum;//Diceorder 배열 [0]에 나왔던 랜덤값 입력
         }
+
 
         if(SelectedDiceorder[1] ==0) {
             randomnum = roll.nextInt(6) + 1;
@@ -768,6 +868,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             Diceorder[1] = randomnum;
         }
 
+
         if(SelectedDiceorder[2] ==0) {
             randomnum = roll.nextInt(6) + 1;
             Dice_order_in(3);
@@ -775,12 +876,14 @@ public class GameplayingActivity2 extends AppCompatActivity {
             Diceorder[2] = randomnum;
         }
 
+
         if(SelectedDiceorder[3] ==0) {
             randomnum = roll.nextInt(6) + 1;
             Dice_order_in(4);
             Dice_image_in(randomnum);
             Diceorder[3] = randomnum;
         }
+
 
         if(SelectedDiceorder[4] ==0) {
             randomnum = roll.nextInt(6) + 1;

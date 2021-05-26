@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_vertical">
+
         <RelativeLayout
             android:id="@+id/TrunBar"
             android:layout_width="wrap_content"
@@ -473,15 +474,17 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P1YachtBtn"
                 android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:onClick="onButtonClick"
-                android:layout_toRightOf="@+id/Yacht" />
+                android:layout_height="45dp"
+                android:layout_toRightOf="@+id/Yacht"
+                android:background="@drawable/gif"
+                android:onClick="onButtonClick" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2YachtBtn"
                 android:layout_width="80dp"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_toRightOf="@+id/P1YachtBtn"
+                android:background="@drawable/gif"
                 android:onClick="onButtonClick" />
         </RelativeLayout>
         <!-- Total-->
