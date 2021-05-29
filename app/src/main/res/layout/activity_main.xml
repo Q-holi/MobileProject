@@ -20,26 +20,27 @@
         android:layout_alignParentBottom="true"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_1plogin"
+        android:id="@+id/button_offline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="156dp"
         android:background="@drawable/background"
-        android:text="1Player Login"
+        android:text="오프라인"
+        android:onClick="onButton_Offline_Clicked"
         android:textColor="@color/black" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_2plogin"
+        android:id="@+id/button_online"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="256dp"
         android:background="@drawable/background"
-        android:text="2Player Login"
-        android:textColor="@color/black"/>
+        android:text="온라인"
+        android:textColor="@color/black" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_signup"
@@ -49,18 +50,18 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="356dp"
         android:background="@drawable/background"
-        android:textColor="@color/black"
-        android:text="Sign up"/>
+        android:onClick="onButton_Signup_Clicked"
+        android:text="회원가입"
+        android:textColor="@color/black" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_start"
+        android:id="@+id/button_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="456dp"
         android:background="@drawable/background"
-        android:text="Game Start"
-        android:onClick="onButton_Gamestart_Clicked"
-        android:textColor="@color/black"/>
+        android:text="게임 종료"
+        android:textColor="@color/black" />
 </RelativeLayout>

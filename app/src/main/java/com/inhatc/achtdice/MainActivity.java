@@ -47,8 +47,12 @@ public class MainActivity extends AppCompatActivity{
         waveFooter.setCloseColor(Color.WHITE);
     }
 
-    public void onButton_Gamestart_Clicked(View view){
+    public void onButton_Offline_Clicked(View view){
         Intent intent = new Intent(this, GameplayingActivity2.class);
+        startActivity(intent);
+    }
+    public void onButton_Signup_Clicked(View view){
+        Intent intent = new Intent(this, SignupActivity.class);
         startActivity(intent);
     }
 }

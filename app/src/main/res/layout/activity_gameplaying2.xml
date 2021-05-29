@@ -477,7 +477,8 @@
                 android:layout_height="45dp"
                 android:layout_toRightOf="@+id/Yacht"
                 android:background="@drawable/gif"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:textColor="#000000" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/P2YachtBtn"
@@ -485,7 +486,8 @@
                 android:layout_height="45dp"
                 android:layout_toRightOf="@+id/P1YachtBtn"
                 android:background="@drawable/gif"
-                android:onClick="onButtonClick" />
+                android:onClick="onButtonClick"
+                android:textColor="#000000" />
         </RelativeLayout>
         <!-- Total-->
         <RelativeLayout

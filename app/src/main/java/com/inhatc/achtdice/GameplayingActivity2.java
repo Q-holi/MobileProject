@@ -75,21 +75,21 @@ public class GameplayingActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DiceRoll = (Button) findViewById(R.id.DiceRolling);
+        DiceRoll = findViewById(R.id.DiceRolling);
         //P1버튼 객체생성
         setContentView(R.layout.activity_gameplaying2);
-        P1Aces = (Button) findViewById(R.id.P1AcesBtn);
-        P1Deuces = (Button) findViewById(R.id.P1DeucesBtn);
-        P1Trees = (Button) findViewById(R.id.P1ThreesBtn);
-        P1Fours = (Button) findViewById(R.id.P1FoursBtn);
-        P1Fives = (Button) findViewById(R.id.P1FivesBtn);
-        P1Sixes = (Button) findViewById(R.id.P1SixesBtn);
-        P1Choice = (Button) findViewById(R.id.P1ChoiceBtn);
-        P1FourAKind = (Button) findViewById(R.id.P1FourOfaKindBtn);
-        P1FullHouse = (Button) findViewById(R.id.P1FullHouseBtn);
-        P1SmallStraight = (Button) findViewById(R.id.P1SmallStraightBtn);
-        P1LargeStraight = (Button) findViewById(R.id.P1LargeStraightBtn);
-        P1Yacht = (Button) findViewById(R.id.P1YachtBtn);
+        P1Aces = findViewById(R.id.P1AcesBtn);
+        P1Deuces = findViewById(R.id.P1DeucesBtn);
+        P1Trees = findViewById(R.id.P1ThreesBtn);
+        P1Fours = findViewById(R.id.P1FoursBtn);
+        P1Fives = findViewById(R.id.P1FivesBtn);
+        P1Sixes = findViewById(R.id.P1SixesBtn);
+        P1Choice = findViewById(R.id.P1ChoiceBtn);
+        P1FourAKind = findViewById(R.id.P1FourOfaKindBtn);
+        P1FullHouse = findViewById(R.id.P1FullHouseBtn);
+        P1SmallStraight = findViewById(R.id.P1SmallStraightBtn);
+        P1LargeStraight = findViewById(R.id.P1LargeStraightBtn);
+        P1Yacht = findViewById(R.id.P1YachtBtn);
 
         //P1버튼 전부 비활성화
         P1Aces.setEnabled(false);
@@ -105,19 +105,19 @@ public class GameplayingActivity2 extends AppCompatActivity {
         P1LargeStraight.setEnabled(false);
         P1Yacht.setEnabled(false);
         //P2버튼 객체생성
-        P2Aces = (Button) findViewById(R.id.P2AcesBtn);
-        P2Deuces = (Button) findViewById(R.id.P2DeucesBtn);
-        P2Trees = (Button) findViewById(R.id.P2ThreesBtn);
-        P2Fours = (Button) findViewById(R.id.P2FoursBtn);
-        P2Fives = (Button) findViewById(R.id.P2FivesBtn);
-        P2Sixes = (Button) findViewById(R.id.P2SixesBtn);
-        P2Choice = (Button) findViewById(R.id.P2ChoiceBtn);
-        P2FourAKind = (Button) findViewById(R.id.P2FourOfaKindBtn);
-        P2FullHouse = (Button) findViewById(R.id.P2FullHouseBtn);
-        P2SmallStraight = (Button) findViewById(R.id.P2SmallStraightBtn);
-        P2LargeStraight = (Button) findViewById(R.id.P2LargeStraightBtn);
-        P2Yacht = (Button) findViewById(R.id.P2YachtBtn);
-        DiceRoll = (Button) findViewById(R.id.DiceRolling);
+        P2Aces = findViewById(R.id.P2AcesBtn);
+        P2Deuces = findViewById(R.id.P2DeucesBtn);
+        P2Trees = findViewById(R.id.P2ThreesBtn);
+        P2Fours = findViewById(R.id.P2FoursBtn);
+        P2Fives = findViewById(R.id.P2FivesBtn);
+        P2Sixes = findViewById(R.id.P2SixesBtn);
+        P2Choice = findViewById(R.id.P2ChoiceBtn);
+        P2FourAKind = findViewById(R.id.P2FourOfaKindBtn);
+        P2FullHouse = findViewById(R.id.P2FullHouseBtn);
+        P2SmallStraight = findViewById(R.id.P2SmallStraightBtn);
+        P2LargeStraight = findViewById(R.id.P2LargeStraightBtn);
+        P2Yacht = findViewById(R.id.P2YachtBtn);
+        DiceRoll = findViewById(R.id.DiceRolling);
 
         //P2버튼 전부 비활성화
 
@@ -134,19 +134,19 @@ public class GameplayingActivity2 extends AppCompatActivity {
         P2LargeStraight.setEnabled(false);
         P2Yacht.setEnabled(false);
 
-        P1Total_score = (TextView) findViewById(R.id.P1Total);
-        P1Bonus_check = (TextView) findViewById(R.id.P1Bouns);
+        P1Total_score = findViewById(R.id.P1Total);
+        P1Bonus_check = findViewById(R.id.P1Bouns);
 
-        P2Total_score = (TextView) findViewById(R.id.P2Total);
-        P2Bonus_check = (TextView) findViewById(R.id.P2Bouns);
+        P2Total_score = findViewById(R.id.P2Total);
+        P2Bonus_check = findViewById(R.id.P2Bouns);
 
-        touch_dice1 = (ImageView) findViewById(R.id.DiceImageView1);
-        touch_dice2 = (ImageView) findViewById(R.id.DiceImageView2);
-        touch_dice3 = (ImageView) findViewById(R.id.DiceImageView3);
-        touch_dice4 = (ImageView) findViewById(R.id.DiceImageView4);
-        touch_dice5 = (ImageView) findViewById(R.id.DiceImageView5);
+        touch_dice1 = findViewById(R.id.DiceImageView1);
+        touch_dice2 = findViewById(R.id.DiceImageView2);
+        touch_dice3 = findViewById(R.id.DiceImageView3);
+        touch_dice4 = findViewById(R.id.DiceImageView4);
+        touch_dice5 = findViewById(R.id.DiceImageView5);
 
-        DiceRollingcount = (TextView) findViewById(R.id.DiceRollingcount);
+        DiceRollingcount = findViewById(R.id.DiceRollingcount);
 
 
         startturn();
@@ -159,15 +159,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
 
             //P1Turn,P2Turn 을 가져와
-            TextView P1Turn = (TextView) findViewById(R.id.P1Turn);
-            TextView P2Turn = (TextView) findViewById(R.id.P2Turn);
+            TextView P1Turn = findViewById(R.id.P1Turn);
+            TextView P2Turn = findViewById(R.id.P2Turn);
             //P1Turn은 MAGENTA색으로 P2Turn는 black으로 색변경
             P1Turn.setTextColor(Color.MAGENTA);
             P2Turn.setTextColor(Color.parseColor("#000000"));
 
 
             //textView turn을가져와
-            TextView Turn = (TextView) findViewById(R.id.Turn);
+            TextView Turn = findViewById(R.id.Turn);
             //Turn의 텍스트를 넣기
             String now_turn = (String) Turn.getText();
             // "/"기준으로 문자열자르기
@@ -175,7 +175,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
             // 자른 문자열에서 숫자 부분만 떼네 1을 더한다.
             int plus_turn = 1 + Integer.parseInt(now_turn_num[0]);
             //+1해서
-            Turn.setText(Integer.toString(plus_turn) + "/12");
+            Turn.setText(plus_turn + "/12");
             //기존 양식에 맞게 출력
 
            //player2버튼 비활성화
@@ -222,8 +222,8 @@ public class GameplayingActivity2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "player2 turn", Toast.LENGTH_SHORT).show();
 
             //P1Turn,P2Turn 을 가져와
-            TextView P1Turn = (TextView) findViewById(R.id.P1Turn);
-            TextView P2Turn = (TextView) findViewById(R.id.P2Turn);
+            TextView P1Turn = findViewById(R.id.P1Turn);
+            TextView P2Turn = findViewById(R.id.P2Turn);
             //P2Turn은 MAGENTA색으로 P1Turn는 black으로 색변경
             P2Turn.setTextColor(Color.MAGENTA);
             P1Turn.setTextColor(Color.parseColor("#000000"));
@@ -351,7 +351,7 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
             case R.id.DiceRolling:
                 rolldicecount++;
-                DiceRollingcount.setText(Integer.toString(rolldicecount) + "/2");
+                DiceRollingcount.setText(rolldicecount + "/2");
 
                 if(rolldicecount==2){
                     DiceRoll.setEnabled(false);
@@ -442,11 +442,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Aces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
             P1Aces.setEnabled(false);
@@ -458,11 +458,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Aces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
             P2Aces.setEnabled(false);
@@ -485,12 +485,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Deuces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -504,12 +504,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Deuces.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -532,12 +532,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Trees.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -551,12 +551,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Trees.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -578,12 +578,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Fours.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -596,12 +596,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Fours.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -623,12 +623,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Fives.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -642,12 +642,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Fives.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -670,12 +670,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P1Sixes.getText()) + Integer.parseInt(Subtotalnum[0]);
             P1Total_score.setText(Integer.toString(score));
-            P1Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P1Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P1Total_score.getText());
                 P1Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P1BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P1BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -689,12 +689,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
             String[] Subtotalnum = Subtotalsplit.split("/");
             int subscore = Integer.parseInt((String) P2Sixes.getText()) + Integer.parseInt(Subtotalnum[0]);
             P2Total_score.setText(Integer.toString(score));
-            P2Bonus_check.setText(Integer.toString(subscore) + "/63");
+            P2Bonus_check.setText(subscore + "/63");
 
             if(subscore>=63){
                 score = 35+Integer.parseInt((String) P2Total_score.getText());
                 P2Total_score.setText(Integer.toString(score));
-                TextView Bonuscheck = (TextView) findViewById(R.id.P2BounsCheck);
+                TextView Bonuscheck = findViewById(R.id.P2BounsCheck);
                 Bonuscheck.setText("O");
             }
 
@@ -897,15 +897,15 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
     public void Dice_order_in(int diceorder) {//몇번째 주사위에 이미지를 넣을것인지 지정
         if (diceorder == 1) {
-            imageView = (ImageView) findViewById(R.id.DiceImageView1);
+            imageView = findViewById(R.id.DiceImageView1);
         } else if (diceorder == 2) {
-            imageView = (ImageView) findViewById(R.id.DiceImageView2);
+            imageView = findViewById(R.id.DiceImageView2);
         } else if (diceorder == 3) {
-            imageView = (ImageView) findViewById(R.id.DiceImageView3);
+            imageView = findViewById(R.id.DiceImageView3);
         } else if (diceorder == 4) {
-            imageView = (ImageView) findViewById(R.id.DiceImageView4);
+            imageView = findViewById(R.id.DiceImageView4);
         } else {
-            imageView = (ImageView) findViewById(R.id.DiceImageView5);
+            imageView = findViewById(R.id.DiceImageView5);
         }
     }
 
@@ -951,12 +951,12 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[0] == 0) {
             //player1이면서 player1의 Aces버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1AcesBtn);
+            btn_text_edit = findViewById(R.id.P1AcesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         } else if ((turnCount % 2 == 1 && player2topitem[0] == 0)) {
             //player2이면서 player2의 Aces버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2AcesBtn);
+            btn_text_edit = findViewById(R.id.P2AcesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }
@@ -973,11 +973,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[1] == 0) {
             //player1이면서 player1의 Deuces버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1DeucesBtn);
+            btn_text_edit = findViewById(R.id.P1DeucesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if ((turnCount % 2 == 1 && player2topitem[1] == 0)) {
             //player2이면서 player2의 Deuces버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2DeucesBtn);
+            btn_text_edit = findViewById(R.id.P2DeucesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
 
@@ -992,11 +992,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[2] == 0) {
             //player1이면서 player1의 Threes버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1ThreesBtn);
+            btn_text_edit = findViewById(R.id.P1ThreesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[2] == 0) {
             //player2이면서 player2의 Threes버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2ThreesBtn);
+            btn_text_edit = findViewById(R.id.P2ThreesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }
@@ -1013,11 +1013,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[3] == 0) {
             //player1이면서 player1의 Fours버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1FoursBtn);
+            btn_text_edit = findViewById(R.id.P1FoursBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[3] == 0) {
             //player2이면서 player2의 Fours버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2FoursBtn);
+            btn_text_edit = findViewById(R.id.P2FoursBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }
@@ -1033,11 +1033,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[4] == 0) {
             //player1이면서 player1의 Fives버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1FivesBtn);
+            btn_text_edit = findViewById(R.id.P1FivesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[4] == 0) {
             //player2이면서 player2의 Fives버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2FivesBtn);
+            btn_text_edit = findViewById(R.id.P2FivesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }
@@ -1053,11 +1053,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1topitem[5] == 0) {
             //player1이면서 player1의 Sixes버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1SixesBtn);
+            btn_text_edit = findViewById(R.id.P1SixesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2topitem[5] == 0) {
             //player2이면서 player2의 Sixes버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2SixesBtn);
+            btn_text_edit = findViewById(R.id.P2SixesBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
 
@@ -1072,11 +1072,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
 
         if (turnCount % 2 == 0 && player1bottomitem[0] == 0) {
             //player1이면서 player1의 Choice버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1ChoiceBtn);
+            btn_text_edit = findViewById(R.id.P1ChoiceBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[0] == 0) {
             //player2이면서 player2의 Choice버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2ChoiceBtn);
+            btn_text_edit = findViewById(R.id.P2ChoiceBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
 
@@ -1105,11 +1105,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1bottomitem[1] == 0) {
             //player1이면서 player1의 FourofaKind버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1FourOfaKindBtn);
+            btn_text_edit = findViewById(R.id.P1FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[1] == 0) {
             //player2이면서 player2의 FourofaKind버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2FourOfaKindBtn);
+            btn_text_edit = findViewById(R.id.P2FourOfaKindBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
     }
@@ -1146,11 +1146,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1bottomitem[2] == 0) {
             //player1이면서 player1의 FullHouse버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1FullHouseBtn);
+            btn_text_edit = findViewById(R.id.P1FullHouseBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[2] == 0) {
             //player2이면서 player2의 FullHouse버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2FullHouseBtn);
+            btn_text_edit = findViewById(R.id.P2FullHouseBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
 
         }
@@ -1196,11 +1196,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1bottomitem[3] == 0) {
             //player1이면서 player1의 SmallStraight버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1SmallStraightBtn);
+            btn_text_edit = findViewById(R.id.P1SmallStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[3] == 0) {
             //player2이면서 player2의 SmallStraight버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2SmallStraightBtn);
+            btn_text_edit = findViewById(R.id.P2SmallStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
 
@@ -1235,11 +1235,11 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1bottomitem[4] == 0) {
             //player1이면서 player1의 LargeStraight버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1LargeStraightBtn);
+            btn_text_edit = findViewById(R.id.P1LargeStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         } else if (turnCount % 2 == 1 && player2bottomitem[4] == 0) {
             //player2이면서 player2의 LargeStraight버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2LargeStraightBtn);
+            btn_text_edit = findViewById(R.id.P2LargeStraightBtn);
             btn_text_edit.setText(Integer.toString(btn_num));
         }
     }
@@ -1255,10 +1255,10 @@ public class GameplayingActivity2 extends AppCompatActivity {
         }
         if (turnCount % 2 == 0 && player1bottomitem[5] == 0) {
             //player1이면서 player1의 Yacht버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P1YachtBtn);
+            btn_text_edit = findViewById(R.id.P1YachtBtn);
         } else if (turnCount % 2 == 1 && player2bottomitem[5] == 0) {
             //player2이면서 player1의 Yacht버튼이 아직 안눌렸으면
-            btn_text_edit = (Button) findViewById(R.id.P2YachtBtn);
+            btn_text_edit = findViewById(R.id.P2YachtBtn);
         }
 
         if (first_check >= 4) {
