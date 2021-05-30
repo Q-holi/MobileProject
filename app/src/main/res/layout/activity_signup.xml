@@ -29,28 +29,6 @@
         android:text="파이어베이스 테스트" />
 
     <EditText
-        android:id="@+id/edit_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="256dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="ID 입력" />
-
-    <EditText
-        android:id="@+id/edit_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="456dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="이름 입력" />
-
-    <EditText
         android:id="@+id/edit_Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="556dp"
+        android:layout_marginTop="256dp"
         android:ems="10"
         android:inputType="textEmailAddress" />
 
@@ -76,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginTop="656dp"
+        android:layout_marginTop="456dp"
         android:text="전송" />
 
 </RelativeLayout>

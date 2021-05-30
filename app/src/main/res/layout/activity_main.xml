@@ -39,6 +39,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="256dp"
         android:background="@drawable/background"
+        android:onClick="onButton_Online_Clicked"
         android:text="온라인"
         android:textColor="@color/black" />
 
