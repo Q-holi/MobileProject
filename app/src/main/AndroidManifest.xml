@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.inhatc.achtdice">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- 인터넷 사용 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
-
-
 
     <application
         android:allowBackup="true"
@@ -14,15 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AchtDice">
+        <activity android:name=".MapActivity"></activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
-        </activity>
-        <activity android:name=".SignupActivity" ></activity>
+            android:label="@string/title_activity_login"></activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBFSaiTa9jWYSQ3GAv7gF_l28Et9A3h5k8" />
 
-
-        <activity android:name=".GameplayingActivity2" ></activity>
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".GameplayingActivity2" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

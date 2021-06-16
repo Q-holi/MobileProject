@@ -58,6 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this,"로그인 성공",Toast.LENGTH_SHORT).show();
+                            onMap();
+
                             //밑은 프로젝트 진행해서 MAP관련 페이지 만들때 사용
                             //Intent intent = new Intent(this, Activity.class);
                             //startActivity(intent);
@@ -68,5 +70,9 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 });
 
+    }
+    public void onMap(){
+        Intent intent = new Intent(this, MapActivity.class);
+        startActivity(intent);
     }
 }
