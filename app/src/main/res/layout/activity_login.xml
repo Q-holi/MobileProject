@@ -27,7 +27,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="356dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="password"/>
 
     <EditText
         android:id="@+id/edit_Email"
@@ -37,7 +38,8 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="256dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="이메일입력"/>
 
     <Button
         android:id="@+id/btn_login"
@@ -47,6 +49,15 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="456dp"
         android:text="로그인" />
+
+    <Button
+        android:id="@+id/btn_pwd_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="556dp"
+        android:text="비밀번호 찾기" />
 
     <TextView
         android:id="@+id/banner_login"

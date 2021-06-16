@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button Login_btn;
+    Button Login_btn,find_btn;
     EditText Email, Password;
     private FirebaseAuth mAuth;
 
@@ -31,10 +31,12 @@ public class LoginActivity extends AppCompatActivity {
         //버튼 등록하기
 
         Login_btn = findViewById(R.id.btn_login);
+        find_btn = findViewById(R.id.btn_pwd_find);
         Email = findViewById(R.id.edit_Email);
         Password = findViewById(R.id.edit_Password);
 
         findViewById(R.id.btn_login).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_pwd_find).setOnClickListener(onClickListener);
     }
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
@@ -42,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
             switch (v.getId()){
                 case R.id.btn_login:
                     login();
+                    break;
+                case R.id.btn_pwd_find:
+                    find_pwd();
                     break;
 
             }
@@ -69,6 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+    }
+    private void find_pwd() {
+        Intent intent = new Intent(this, pwd_findActivity.class);
+        startActivity(intent);
 
     }
     public void onMap(){
