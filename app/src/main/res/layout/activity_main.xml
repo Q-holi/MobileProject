@@ -63,6 +63,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="456dp"
         android:background="@drawable/background"
+        android:onClick="onbutton_exit_Clicked"
         android:text="게임 종료"
         android:textColor="@color/black" />
 </RelativeLayout>

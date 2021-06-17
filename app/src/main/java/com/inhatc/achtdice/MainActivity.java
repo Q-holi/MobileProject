@@ -59,4 +59,7 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }
+    public void onbutton_exit_Clicked(View view){
+        finish();
+    }
 }

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
         Login_btn = findViewById(R.id.btn_login);
         find_btn = findViewById(R.id.btn_pwd_find);
-        Email = findViewById(R.id.edit_Email);
+        Email = findViewById(R.id.edit_Email2);
         Password = findViewById(R.id.edit_Password);
 
         findViewById(R.id.btn_login).setOnClickListener(onClickListener);

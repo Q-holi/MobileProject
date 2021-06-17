@@ -11,10 +11,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.GoogleAuthProvider;
 
 
 public class SignupActivity extends AppCompatActivity {
@@ -48,7 +46,7 @@ public class SignupActivity extends AppCompatActivity {
 
         String password =((EditText)findViewById(R.id.edit_Password)).getText().toString();
 
-        String email =((EditText)findViewById(R.id.edit_Email)).getText().toString();
+        String email =((EditText)findViewById(R.id.edit_Email2)).getText().toString();
 
 
 
